@@ -29,7 +29,9 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   16.0
   64.0
   ```
+  
 - `itemsAdd()`, `itemsSub()`, `itemsMulti()`, & `itemsDivd()`: returns the sum, difference, product, or quotient of all items in a list (argument).
+
   ```py
   print(math.itemsAdd([1, 2, 3]))
   print(math.itemsSub([5, 3, 0.5]))
@@ -42,7 +44,9 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   100.0
   25.0
   ```
+  
 - `joinStrs()`: returns a joined string of all items in a list (argument).
+
   ```py
   name = "Davis"
   print(math.joinStrs(["Hello, ", name, "!"]))
@@ -50,7 +54,9 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   ```
   Hello, Davis!
   ```
+  
 - `itemCount()`: returns the amount of items in a list (first argument) that matches the secound argument.
+
   ```py
   print(math.itemCount(["a", "a", "b"], "a"))
   print(math.itemCount(["a", "a", "b"], "b"))
@@ -61,7 +67,9 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   1
   0
   ```
+  
 - `rangeLimit()`: sets a limit to a number's (first) range with a minimum and maximum (secound and third argument).
+
   ```py
   print(math.rangeLimit(5, 0, 10))
   print(math.rangeLimit(11, 0, 10))
