@@ -1,2 +1,0 @@
-# Dython
-Python Library
