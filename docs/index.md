@@ -2,4 +2,6 @@
 
 **Dython** is an open-source Python library containing many functions that's useful when making a Python script.
 
+***[Dython's Documentation](https://sombrero64.github.io/Dython/doc)***
+
 Dython is created by [Daniel Lawson](https://github.com/Sombrero64).
