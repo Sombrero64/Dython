@@ -130,7 +130,7 @@ Temporary Variables are variables that were designed for temporary use. After th
 
   You can use the list `temps` for advanced purposes.
   
-  _`[ [name, value] , ]`
+  *`[ [name, value] , ]`*
   
 # Console
 The `console` class contains functions regrading the console. There is only one function.
