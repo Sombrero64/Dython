@@ -7,9 +7,9 @@ Dython uses the MIT license (mit), this allows you to do the following.
 
 You can distribute your product using it aslong you give credit to the use of Dython, and leave a copyright notice. If possible, please include Dython's license. 
 
-*For more infomation about the license, please read the license below. [You can also read it on GitHub](https://github.com/Sombrero64/Dython/blob/master/LICENSE).*
+For more infomation about the license, please read the license below. 
+You can also read it on GitHub, https://github.com/Sombrero64/Dython/blob/master/LICENSE.
 
-#
 
 MIT License
 
