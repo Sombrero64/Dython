@@ -7,6 +7,10 @@
 
 [Oprations](#oprations)
 
+[Temporary Variables](#temporary-variables)
+
+[Console](#console)
+
 ## Instailing Dython
 1. Download Dython, and extract it. ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TAR](https://github.com/Sombrero64/Dython/tarball/master))
 2. Take the Dython's script, **Dython.py**, and insert in your project's folder.
@@ -82,3 +86,69 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   0
   7
   ```
+
+## Temporary Variables
+Temporary Variables are variables that were designed for temporary use. After their use is over, they are easily removed. All functions that uses them are from the `temp` class, which contains over 4 functions.
+
+- `define()`: defines a temporary variable. Its name is the first argument, and its starting value is the secound argument.
+
+  ```py
+  temp.define("myTemp", 0)
+  ```
+  
+  It doesn't do anything if there was already a temporary variable named as such.
+
+- `get()`: returns the value of a temporary variable (first argument). It returns _None_ if the temporary variable doesn't exist.
+
+  ```py
+  temp.define("myTemp", 25)
+  print(temp.get("myTemp"))
+  ```
+  ```
+  25
+  ```
+
+- `set()`: sets the value of a temporary variable (first argument) to the secound argument.
+
+  ```py
+  temp.define("myTemp", 0)
+  print(temp.get("myTemp"))
+  
+  temp.set("myTemp", 50)
+  print(temp.get("myTemp"))
+  ```
+  ```
+  0
+  50
+  ```
+  
+- `remove()`: removes a temporary variable.
+
+  ```py
+  remove("myTemp")
+  ```
+
+  You can use the list `temps` for advanced purposes.
+  
+  _`[ [name, value] , ]`
+  
+# Console
+The `console` class contains functions regrading the console. There is only one function.
+
+- `menu()`: allows you to apply a multichoice input into the console, allowing the user to pick an option.
+  
+  ```py
+  anwser = console.menu(None, ["a", "b", "c", "d"], False)
+  ```
+  ```
+  0: a
+  1: b
+  2: c
+  3: d
+  ```
+  
+  The first argument allows you to provide a caption, such as the question. Leaving it as a blank string, or providing _None_ would not make a caption.
+  
+  The secound argument is your options from a list.
+  
+  To allow an empty anwser to be provided, set the third argment to True. If the user provides an empty anwser, it will return _None_. Otherwise, set it False.
