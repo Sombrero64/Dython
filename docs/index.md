@@ -4,4 +4,6 @@
 
 ***[Dython's Documentation](https://sombrero64.github.io/Dython/doc)***
 
+*[Dython's License](https://sombrero64.github.io/Dython/licenseInfo)*
+
 Dython is created by [Daniel Lawson](https://github.com/Sombrero64).
