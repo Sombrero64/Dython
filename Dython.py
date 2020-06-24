@@ -80,7 +80,7 @@ class console():
         if caption != "" and caption != None:
             print(str(caption))
         if int(len(options)) <= 1:
-            print("error in a menuInput() function")
+            print("error in a menu() function")
             exit
         for optionCount in range(len(options)):
             print(str(optionCount) + ": " + str(options[optionCount]))
@@ -98,7 +98,7 @@ class console():
                         testAnwser = str(optionAnwser)
                         mest = "str"
                     except:
-                        print("error in a menuInput() function")
+                        print("error in a menu() function")
                         exit
             if mest == "int" or mest == "float":
                 if mest == "float":
