@@ -6,4 +6,4 @@
 
 *[Dython's License](https://sombrero64.github.io/Dython/licenseInfo)*
 
-Dython is created by [Daniel Lawson](https://github.com/Sombrero64).
+Dython is created by [Daniel](https://github.com/Sombrero64), copyright (©) 2020 Daniel Lawson.
