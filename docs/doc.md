@@ -119,7 +119,7 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   3
   ```
 
-- `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such ite exists, it returns _None_.
+- `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such item exists, it returns _None_.
 
   ```py
   print(math.listInits([4, 0, 2, 5, 0, 3, 0], 0))
