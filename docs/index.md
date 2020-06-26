@@ -6,4 +6,6 @@
 
 *[Dython's License](https://sombrero64.github.io/Dython/licenseInfo)*
 
+[Dython's Logos](https://sombrero64.github.io/Dython/logos)
+
 Dython is created by [Daniel](https://github.com/Sombrero64), copyright (©) 2020 Daniel Lawson.
