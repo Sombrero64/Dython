@@ -1,4 +1,4 @@
 theme: jekyll-theme-modernist
 show_downloads: true
-title: Dython
+title: !["Dython's logo; a yellow snake going around a monitor."](https://raw.githubusercontent.com/Sombrero64/Dython/master/docs/DythonLogo.png)
 description: A Python Function Library
