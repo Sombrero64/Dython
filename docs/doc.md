@@ -72,7 +72,7 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   0
   ```
   
-- `rangeLimit()`: sets a limit to a number's (first) range with a minimum and maximum (secound and third argument).
+- `rangeLimit()`: sets a limit to a number's (first) range with a minimum and maximum (secound and third arguments).
 
   ```py
   print(math.rangeLimit(5, 0, 10))
@@ -85,6 +85,25 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   10
   0
   7
+  ```
+  
+- `feturn()`: returns either the secound or third argument depending on a Boolean (first). If true, secound. Otherwise, third.
+  
+  ```py
+  print(math.feturn(False, "Yes", "No"))
+  print(math.feturn(True, "Yes", "No"))
+  
+  print('')
+  
+  print(math.feturn(False, "On", "Off"))
+  print(math.feturn(True, "On", "Off"))
+  ```
+  ```
+  No
+  Yes
+  
+  Off
+  On
   ```
 
 ## Temporary Variables
