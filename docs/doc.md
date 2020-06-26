@@ -105,6 +105,37 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   Off
   On
   ```
+  
+- `listInit()`: returns a number regrading the first instance of a item (secound argument) in a list (first argument). If no such item exists, it returns _None_.
+
+  ```py
+  print(math.listInit(["a", "b", "c", "d", "e"], "e"))
+  print(math.listInit(["a", "b", "c", "d", "e"], "a"))
+  print(math.listInit(["a", "b", "c", "d", "e"], "d"))
+  ```
+  ```
+  4
+  0
+  3
+  ```
+
+- `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such ite exists, it returns _None_.
+
+  ```py
+  print(math.listInits([4, 0, 2, 5, 0, 3, 0], 0))
+  ```
+  ```
+  [1, 4, 6]
+  ```
+  
+- `filterList()`: returns a list (first) without items matching the secound argument.
+
+  ```py
+  print(math.filterList([0, 1, 0, 0, 2, 3, 0, 4, 5], 0))
+  ```
+  ```
+  [1, 2, 3, 4, 5]
+  ```
 
 ## Temporary Variables
 Temporary Variables are variables that were designed for temporary use. After their use is over, they are easily removed. All functions that uses them are from the `temp` class, which contains over 4 functions.
