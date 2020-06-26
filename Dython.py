@@ -42,6 +42,11 @@ class math():
         if int(num) < int(MIN):
             return int(MIN)
         return int(num)
+    def feturn(con, true, false):
+        if bool(con):
+            return true
+        else:
+            return false
 
 # Temp Variables
 temps = []
