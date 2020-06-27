@@ -178,9 +178,22 @@ Temporary Variables are variables that were designed for temporary use. After th
   remove("myTemp")
   ```
 
+
   You can use the list `temps` for advanced purposes.
   
-  *`[ [name, value] , ]`*
+  > `[name, value]`
+  
+  ```py
+  temp.define("VarA", 0)
+  temp.define("VarB", "abc")
+  temp.define("VarC", True)
+  temp.define("VarD", [0, 1, 2])
+
+  print(temps)
+  ```
+  ```
+  [['VarA', 0], ['VarB', 'abc'], ['VarC', True], ['VarD', [0, 1, 2]]]
+  ```
   
 # Console
 The `console` class contains functions regrading the console. There is only one function.
