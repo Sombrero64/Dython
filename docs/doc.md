@@ -195,6 +195,16 @@ Temporary Variables are variables that were designed for temporary use. After th
   [['VarA', 0], ['VarB', 'abc'], ['VarC', True], ['VarD', [0, 1, 2]]]
   ```
   > Please refrain from using the temps variable differently, such as setting it as a different type. If you do this, these functions above might not work.
+  > ```py
+  > temps = "abc"
+  >
+  >temp.define("dummy", None)
+  >
+  >print(temps)
+  > ```
+  > ```
+  > abc
+  > ```
   
 # Console
 The `console` class contains functions regrading the console. There is only one function.
