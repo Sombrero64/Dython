@@ -2,7 +2,7 @@
 def itemsMerge(var):
     num = None
     for i in list(var):
-        num += float(i)
+        num += i
     return num
 
 def itemsMulty(var):
