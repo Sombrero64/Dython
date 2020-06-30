@@ -10,12 +10,6 @@ def itemsMulty(var):
     for i in list(var):
         num *= float(i)
     return num
-
-def itemCount(var, item):
-    count = 0
-    for i in list(var):
-        if i is item: count += 1
-    return int(count)
     
 def rangeLimit(num, MIN, MAX):
     if int(num) > int(MAX): return int(MAX)
