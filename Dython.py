@@ -1,8 +1,8 @@
 # Oprations
 def itemsMerge(var):
-    num = None
+    num = 0
     for i in list(var):
-        num += i
+        num += float(i)
     return num
 
 def itemsMulty(var):
