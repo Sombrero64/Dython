@@ -8,4 +8,10 @@
 
 [Dython's Logos](https://sombrero64.github.io/Dython/logos)
 
-Dython is created by [Daniel](https://github.com/Sombrero64), copyright (©) 2020 Daniel Lawson.
+### Credits
+
+[Daniel Lawson](https://github.com/Sombrero64); creator
+
+[18001767679](https://github.com/18001767679)
+
+Copyright (©) 2020 Daniel Lawson
