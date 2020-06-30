@@ -1,5 +1,3 @@
-# Dython Molude
-
 # Oprations
 def itemsMerge(var):
     num = 0
