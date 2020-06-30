@@ -1,6 +1,6 @@
 # Oprations
 def itemsMerge(var):
-    num = 0
+    num = None
     for i in list(var):
         num += float(i)
     return num
@@ -10,12 +10,6 @@ def itemsMulty(var):
     for i in list(var):
         num *= float(i)
     return num
-
-def joinStrs(strings):
-    string = ""
-    for i in list(strings):
-        string += str(i)
-    return str(string)
 
 def itemCount(var, item):
     count = 0
