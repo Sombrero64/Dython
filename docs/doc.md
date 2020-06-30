@@ -1,228 +1,93 @@
-# Dython Documentation
-**Dython** is an open-source Python library created by [Daniel Lawson](https://github.com/Sombrero64), that includes functions that saves room and time.
+# Dython's Documentation
+Dython is a free open-source Python library/module created by Daniel Lawson that contains pently of useful features when making a Python project.
+Download Dython: ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TAR](https://github.com/Sombrero64/Dython/tarball/master))
 
-### Table of Contents
+## Functions
 
-[Instailing Dython](#instailing-dython)
-
-[Oprations](#oprations)
-
-[Temporary Variables](#temporary-variables)
-
-[Console](#console)
-
-## Instailing Dython
-1. Download Dython, and extract it. ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TAR](https://github.com/Sombrero64/Dython/tarball/master))
-2. Take the Dython's script, **Dython.py**, and insert in your project's folder.
-3. Edit scripts that requires Dython's functions, and add an `import` command.
-
-```py
-from Dython import *
-```
-
-## Oprations
-The oprations (`math`) class contains functions regrading oprating values and objects. There are currently 8 functions under this class.
-
-- `expon()`: returns the expontent of a number (first argument) to the secound argument.
+- `itemsMerge()`: returns a number when adding/subtracting all items in a list (_first_).
 
   ```py
-  print(math.expon(4, 2))
-  print(math.expon(4, 3))
+  print(itemsMerge([42, 5, -2]))
   ```
   ```
-  16.0
-  64.0
+  45.0
   ```
-  
-- `itemsAdd()`, `itemsSub()`, `itemsMulti()`, & `itemsDivd()`: returns the sum, difference, product, or quotient of all items in a list (argument).
+
+- `itemsMulty()`: returns the product of all items in a list (_first_).
 
   ```py
-  print(math.itemsAdd([1, 2, 3]))
-  print(math.itemsSub([5, 3, 0.5]))
-  print(math.itemsMulti([5, 5, 4]))
-  print(math.itemsDivd([100, 4]))
+  print(itemsMulty([25, 4, 4]))
   ```
   ```
-  6.0
-  1.5
-  100.0
-  25.0
+  400.0
   ```
-  
-- `joinStrs()`: returns a joined string of all items in a list (argument).
+
+- `rangeLimit()`: sets a limit of the _first_'s range. If higher than the maximum (_secound_), it returns the _secound_'s value; and vice versa.
 
   ```py
-  name = "Davis"
-  print(math.joinStrs(["Hello, ", name, "!"]))
+  print(rangeLimit(1, 0, 10))
+  print(rangeLimit(5, 0, 10))
+  print(rangeLimit(12, 0, 10))
+  print(rangeLimit(-5, 0, 10))
+  print(rangeLimit(3, 0, 10))
   ```
   ```
-  Hello, Davis!
-  ```
-  
-- `itemCount()`: returns the amount of items in a list (first argument) that matches the secound argument.
-
-  ```py
-  print(math.itemCount(["a", "a", "b"], "a"))
-  print(math.itemCount(["a", "a", "b"], "b"))
-  print(math.itemCount(["a", "a", "b"], "c"))
-  ```
-  ```
-  2
   1
-  0
-  ```
-  
-- `rangeLimit()`: sets a limit to a number's (first) range with a minimum and maximum (secound and third arguments).
-
-  ```py
-  print(math.rangeLimit(5, 0, 10))
-  print(math.rangeLimit(11, 0, 10))
-  print(math.rangeLimit(-3, 0, 10))
-  print(math.rangeLimit(7, 0, 10))
-  ```
-  ```
   5
   10
-  0
-  7
-  ```
-  
-- `feturn()`: returns either the secound or third argument depending on a Boolean (first). If true, secound. Otherwise, third.
-  
-  ```py
-  print(math.feturn(False, "Yes", "No"))
-  print(math.feturn(True, "Yes", "No"))
-  
-  print('')
-  
-  print(math.feturn(False, "On", "Off"))
-  print(math.feturn(True, "On", "Off"))
-  ```
-  ```
-  No
-  Yes
-  
-  Off
-  On
-  ```
-  
-- `listInit()`: returns a number regrading the first instance of a item (secound argument) in a list (first argument). If no such item exists, it returns _None_.
-
-  ```py
-  print(math.listInit(["a", "b", "c", "d", "e"], "e"))
-  print(math.listInit(["a", "b", "c", "d", "e"], "a"))
-  print(math.listInit(["a", "b", "c", "d", "e"], "d"))
-  ```
-  ```
-  4
   0
   3
   ```
 
-- `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such item exists, it returns _None_.
+- `feturn()`: returns either _secound_ or _third_ depending on the Boolean of _first_. If true, then _secound_. If false, then _third_.
 
   ```py
-  print(math.listInits([4, 0, 2, 5, 0, 3, 0], 0))
+  print(feturn(False, 'Yes', 'No'))
+  print(feturn(True, 'Yes', 'No'))
   ```
   ```
-  [1, 4, 6]
+  No
+  Yes
   ```
+
+- `listInit()`: returns a number regrading the first instance of an item in a list (_first_) that matches _secound_. Returns _**None**_ if there was no items that matched _secound_.
+
+  ```py
+  print(listInit([0, 2, 1], 0))
+  print(listInit([0, 2, 1], 2))
+  print(listInit([0, 2, 1], 1))
+  ```
+  ```
+  0
+  1
+  2
+  ```
+
+- `listInits()`: returns a list of numbers regrading instances of items that matches _secound_ in _first_.
+
+  ```py
+  numbers = [0, 1, 0, 2, 0, 2, 0, 4, 4, 0]
+
+  print(listInits(numbers, 0))
+  print(listInits(numbers, 2))
+  print(listInits(numbers, 4))
+  ```
+  ```
+  [0, 2, 4, 6, 9]
+  [3, 5]
+  [7, 8]
+  ```
+
+- `filterList()`: returns a copy of list of _first_ without items that matches _secound_.
   
-- `filterList()`: returns a list (first) without items matching the secound argument.
-
   ```py
-  print(math.filterList([0, 1, 0, 0, 2, 3, 0, 4, 5], 0))
+  numbers = [0, 1, 0, 0, 2, 0, 3, 4, 0, 5]
+  print(filterList(numbers, 0))
   ```
   ```
   [1, 2, 3, 4, 5]
   ```
 
-## Temporary Variables
-Temporary Variables are variables that were designed for temporary use. After their use is over, they are easily removed. All functions that uses them are from the `temp` class, which contains over 4 functions.
+- `menu()`: allows you to provide a mutlichoice input into a console for the user to pick from.
 
-- `define()`: defines a temporary variable. Its name is the first argument, and its starting value is the secound argument.
-
-  ```py
-  temp.define("myTemp", 0)
-  ```
-  
-  It doesn't do anything if there was already a temporary variable named as such.
-
-- `get()`: returns the value of a temporary variable (first argument). It returns _None_ if the temporary variable doesn't exist.
-
-  ```py
-  temp.define("myTemp", 25)
-  print(temp.get("myTemp"))
-  ```
-  ```
-  25
-  ```
-
-- `set()`: sets the value of a temporary variable (first argument) to the secound argument.
-
-  ```py
-  temp.define("myTemp", 0)
-  print(temp.get("myTemp"))
-  
-  temp.set("myTemp", 50)
-  print(temp.get("myTemp"))
-  ```
-  ```
-  0
-  50
-  ```
-  
-- `remove()`: removes a temporary variable.
-
-  ```py
-  remove("myTemp")
-  ```
-
-
-  You can use the list `temps` for advanced purposes.
-  
-  > `[name, value]`
-  
-  ```py
-  temp.define("VarA", 0)
-  temp.define("VarB", "abc")
-  temp.define("VarC", True)
-  temp.define("VarD", [0, 1, 2])
-
-  print(temps)
-  ```
-  ```
-  [['VarA', 0], ['VarB', 'abc'], ['VarC', True], ['VarD', [0, 1, 2]]]
-  ```
-  > Please refrain from using the temps variable differently, such as setting it as a different type. If you do this, these functions above might not work.
-  > ```py
-  > temps = "abc"
-  >
-  >temp.define("dummy", None)
-  >
-  >print(temps)
-  > ```
-  > ```
-  > abc
-  > ```
-  
-# Console
-The `console` class contains functions regrading the console. There is only one function.
-
-- `menu()`: allows you to apply a multichoice input into the console, allowing the user to pick an option.
-  
-  ```py
-  anwser = console.menu(None, ["a", "b", "c", "d"], False)
-  ```
-  ```
-  0: a
-  1: b
-  2: c
-  3: d
-  ```
-  
-  The first argument allows you to provide a caption, such as the question. Leaving it as a blank string, or providing _None_ would not make a caption.
-  
-  The secound argument is your options from a list.
-  
-  To allow an empty anwser to be provided, set the third argment to True. If the user provides an empty anwser, it will return _None_. Otherwise, set it False.
+### Local Variables
