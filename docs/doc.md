@@ -116,7 +116,7 @@ Download Dython: ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TA
   To allow an empty response, set _third_ to true. If the user provided as such, it would return ***None***.
 
 ### Local Variables
-Local Variables (formerly called temporary variables) allows you to make variables for temporary use. After their main use is over, they can be removed later on.
+**Local Variables** (formerly called Temporary Variables) allows you to make variables for temporary use. After their main use is over, they can be removed later on.
 
 ```py
 myLocals = local()
@@ -157,4 +157,140 @@ myLocals = local()
   ```
   ```
   None
+  ```
+
+### Objects
+**Objects** is a feature that allows you to create instances that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to a variable to make a master object (service).
+
+```py
+workspaceProps = [prop('Project Name', 'Project')]
+workspace = Instance('Workspace', 'Workspace', workspaceProps)
+```
+
+#### Info Functions
+These functions would gather and modify infomation about an object; their subject, class, and props, and return them.
+
+- `gitSub()`, `gitClass()`, & `gitProps()`: returns an object's subject, class, or props.
+
+  ```py
+  print(workspace.gitSub())
+  print(workspace.gitClass())
+  print(workspace.gitProps())
+  ```
+  ```
+  Workspace
+  Workspace
+  [['Project Name', 'Project', 'Project']]
+  ```
+  
+- `gitSub()`, `gitClass()`, & `gitProps()`: sets an object's subject, class, or props to _first_.
+
+  ```py
+  workspace.sitSub('Workspace?')
+  workspace.sitClass('workSpace')
+  workspace.sitProps([workspaceProps[0], prop('Oragnic?', False)])
+
+  print(workspace.gitSub())
+  print(workspace.gitClass())
+  print(workspace.gitProps())
+  ```
+  ```
+  Workspace?
+  workSpace
+  [['Project Name', 'Project', 'Project'], ['Oragnic?', False, False]]
+  ```
+  
+- `findProp()`: returns a list of a prop (_first_ = name)'s infomation: name, current value, and default value.
+
+  ```py
+  print(workspace.findProp('Project Name'))
+  ```
+  ```
+  ['Project Name', 'Project', 'Project']
+  ```
+  
+- `gitProp()`: returns the current value of a prop (_first_ = name).
+
+  ```py
+  print(workspace.gitProp('Project Name'))
+  ```
+  ```
+  Project
+  ```
+  
+- `sitProp()`: sets the value of a prop (_first_ = name) to _secound_. Use `ritProp()` to set the prop (_first_ = name) to the default value.
+
+  ```py
+  workspace.sitProp('Project Name', 'Cool Game')
+  print(workspace.gitProp('Project Name'))
+  ```
+  ```
+  Cool Game
+  ```
+  
+#### Children (Nested Objects) Functions
+
+- `newChild()`: adds a new object inside an instance.
+
+  ```py
+  workspace.newChild(Instance('Score', 'IntStore', [prop('Value', 0)]))
+  ```
+  
+- `clearChild()`: removes a child from an instance based on _first_'s object.
+
+  ```py
+  child = workspace.findChild('Score')
+  workspace.clearChild(child)
+  ```
+
+- `clearAllChildren()`: removes all children from an instance.
+
+  ```py
+  workspace.clearAllChildren()
+  ```
+  
+- `replaceChild()`: replaces a child with a new object (_secound_) inside an instance.
+
+  ```py
+  child = workspace.findChild('Score')
+  newObj = Instance('Score', 'FloatStore', [prop('Value', 0.0)])
+  workspace.replaceChild(child, newObj)
+  ```
+  
+#### Children Locator Functions
+
+- `children()`: returns the list of all children from an instance.
+
+  ```py
+  print(workspace.children())
+  ```
+  
+- `findChild()`: finds the first child named as such (_first_) from an instance. Returns ***None*** if no child exist named as such.
+
+  ```py
+  print(workspace.findChild('Score').gitClass())
+  ```
+  ```
+  IntStore
+  ```
+  
+- `findFirstChild()`: finds the first child based on finding its class (_first_). Returns ***None*** if no child exist classed as such.
+
+  ```py
+  print(workspace.findFirstChild('IntStore').gitSub())
+  ```
+  ```
+  Score
+  ```
+  
+- `locateForChild()`: finds the first child named (_first_) and classed (_secound_) as such. Returns ***None*** if no child exist named/classed as such.
+
+  ```py
+  workspace.locateForChild('Score', 'IntStore')
+  ```
+
+- `findFirstChildren()`: returns a list of objects that are classed (_first_) as such.
+
+  ```py
+  workspace.findFirstChildren('IntStore')
   ```
