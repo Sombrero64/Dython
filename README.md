@@ -1,4 +1,4 @@
-Dython is a Python Library containing functions that I made.
+Dython is a free open-source Python library/module created by Daniel Lawson that contains pently of useful features when making a Python project.
 
 !["Dython Logo"](https://raw.githubusercontent.com/Sombrero64/Dython/master/docs/DythonLogoText.png)
 
