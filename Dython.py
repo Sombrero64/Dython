@@ -146,8 +146,13 @@ class Instance():
             if p[0] is str(Prop):
                 p[1] = New
                 break
-
-        
+                
+    def ritProp(self, Prop):
+        for p in list(self.PROPS):
+            if p[0] is str(Prop):
+                p[1] = p[2]
+                break
+    
     # Objects
     def newChild(self, Instance): self.CHILDS.append(Instance)
 
