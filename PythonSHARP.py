@@ -112,8 +112,18 @@ def menu(caption, options, noAnwser):
 def prop(name, value): return [str(name), value, value]
 
 def dump(Instance):
-    try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS]
-    except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS]
+    try: return [
+        Instance.SUB,
+        Instance.CLASS,
+        Instance.PROPS,
+        Instance.CHILDS,
+        ]
+    except: return [
+        Instance[0].SUB,
+        Instance[0].CLASS,
+        Instance[0].PROPS,
+        Instance[0].CHILDS,
+        ]
 
 class Instance():
     def __init__(self, Subject, Class, Props):
@@ -138,7 +148,9 @@ class Instance():
     
     def gitProp(self, Prop):
         for p in list(self.PROPS):
-            if p[0] is str(Prop): return p[1]
+            try:
+                if p[0] is str(Prop): return p[1]
+            except: return p
         return None
 
     def sitProp(self, Prop, New):
