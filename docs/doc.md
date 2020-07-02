@@ -2,6 +2,20 @@
 Python# (Python Sharp) is a free open-source Python library/module created by Daniel Lawson that allows the convenient creation of objects, with pently of useful features when making a Python project.
 Download Python#: ([ZIP](https://github.com/Sombrero64/Python-/zipball/master)/[TAR](https://github.com/Sombrero64/Python-/tarball/master))
 
+# Table of Contents
+
+- [Functions](#functions)
+
+- [Local Variables](#local-variables)
+
+- [Objects](#objects)
+
+  - Info Functions
+
+  - Children Functions
+
+  - Children Locator Functions
+
 ## Functions
 
 - `itemsMerge()`: returns a number when adding/subtracting all items in a list (_first_).
