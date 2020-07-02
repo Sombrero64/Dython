@@ -4,7 +4,7 @@
 
 ### **[Documentation](https://sombrero64.github.io/PythonSharp/doc)**
 
-### [License](https://sombrero64.github.io/PythonSharp/license)
+### [License](https://github.com/Sombrero64/PythonSharp/blob/master/LICENSE)
 
 #### [Logos/Icons](https://sombrero64.github.io/PythonSharp/logo/logos)
 
