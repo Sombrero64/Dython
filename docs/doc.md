@@ -183,7 +183,7 @@ These functions would gather and modify infomation about an object; their subjec
   [['Project Name', 'Project', 'Project']]
   ```
   
-- `gitSub()`, `gitClass()`, & `gitProps()`: sets an object's subject, class, or props to _first_.
+- `sitSub()`, `sitClass()`, & `sitProps()`: sets an object's subject, class, or props to _first_.
 
   ```py
   workspace.sitSub('Workspace?')
@@ -218,7 +218,7 @@ These functions would gather and modify infomation about an object; their subjec
   Project
   ```
   
-- `sitProp()`: sets the value of a prop (_first_ = name) to _secound_. Use `ritProp()` to set the prop (_first_ = name) to the default value.
+- `sitProp()`: sets the value of a prop (_first_ = name) to _secound_. Use `ritProp()` to set the prop to the default value.
 
   ```py
   workspace.sitProp('Project Name', 'Cool Game')
