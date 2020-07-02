@@ -243,6 +243,12 @@ These functions would gather and modify infomation about an object; their subjec
   workspace.clearChild(child)
   ```
 
+- `clearChildren()`: removes children from an instance based on _first_'s object.
+
+  ```py
+  workspace.clearChildren()
+  ```
+
 - `clearAllChildren()`: removes all children from an instance.
 
   ```py
@@ -255,6 +261,12 @@ These functions would gather and modify infomation about an object; their subjec
   child = workspace.findChild('Score')
   newObj = Instance('Score', 'FloatStore', [prop('Value', 0.0)])
   workspace.replaceChild(child, newObj)
+  ```
+  
+- `replaceChildren()`: replaces all matching children with a new object (_secound_) inside an instance.
+
+  ```py
+  workspace.replaceChildren(children, newObj)
   ```
   
 #### Children Locator Functions
@@ -286,11 +298,26 @@ These functions would gather and modify infomation about an object; their subjec
 - `locateForChild()`: finds the first child named (_first_) and classed (_secound_) as such. Returns ***None*** if no child exist named/classed as such.
 
   ```py
-  workspace.locateForChild('Score', 'IntStore')
+  print(workspace.locateForChild('Score', 'IntStore').gitSub())
+  ```
+  ```
+  Score
   ```
 
 - `findFirstChildren()`: returns a list of objects that are classed (_first_) as such.
 
   ```py
   workspace.findFirstChildren('IntStore')
+  ```
+  
+- `findRelatedChildren()`: returns a list of objects named as such (_first_) from an instance.
+
+  ```py
+  workspace.findRelatedChildren('Score')
+  ```
+  
+- `locateRelatedChildren()`: returns a list of objects named (_first_) and classed (_secound_) as such.
+
+  ```py
+  workspace.locateRelatedChildren('Score', 'IntScore')
   ```
