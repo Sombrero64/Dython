@@ -1,6 +1,6 @@
-# Dython's Documentation
-Dython is a free open-source Python library/module created by Daniel Lawson that contains pently of useful features when making a Python project.
-Download Dython: ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TAR](https://github.com/Sombrero64/Dython/tarball/master))
+# Documentation
+Python# (Python Sharp) is a free open-source Python library/module created by Daniel Lawson that allows the creation of objects more convently, with pently of useful features when making a Python project.
+Download Python#: ([ZIP](https://github.com/Sombrero64/Python-/zipball/master)/[TAR](https://github.com/Sombrero64/Python-/tarball/master))
 
 ## Functions
 
