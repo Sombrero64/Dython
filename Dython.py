@@ -146,13 +146,13 @@ class Instance():
             if p[0] is str(Prop):
                 p[1] = New
                 break
-                
+
     def ritProp(self, Prop):
         for p in list(self.PROPS):
             if p[0] is str(Prop):
                 p[1] = p[2]
                 break
-    
+
     # Objects
     def newChild(self, Instance): self.CHILDS.append(Instance)
 
@@ -160,7 +160,11 @@ class Instance():
         for oj in range(int(len(list(self.CHILDS)))):
             if self.CHILDS[oj] is Child:
                 self.CHILDS.pop(oj)
-            break
+                break
+    
+    def clearChildren(self, Children):
+        for oj in range(int(len(list(self.CHILDS)))):
+            if self.CHILDS[oj] is Children: self.CHILDS.pop(oj)
 
     def clearAllChildren(self): self.CHILDS = []
 
@@ -169,6 +173,10 @@ class Instance():
             if self.CHILDS[oj] is Child:
                 self.CHILDS[oj] = NewChild
                 break
+
+    def replaceChildren(self, Children, NewObject):
+        for oj in range(int(len(list(self.CHILDS)))):
+            if self.CHILDS[oj] is Children: self.CHILDS[oj] = NewObject
 
     # Find Objects
     def children(self): return list(self.CHILDS)
@@ -191,5 +199,17 @@ class Instance():
     def findFirstChildren(self, ChildrenClass):
         op = []
         for o in list(self.CHILDS):
-            if dump(o)[1] is str(ChildClass): op.append(o)
+            if dump(o)[1] is str(ChildrenClass): op.append(o)
+        return list(op)
+
+    def findRelatedChildren(self, ChildrenName):
+        op = []
+        for o in list(self.CHILDS):
+            if dump(o)[0] is str(ChildrenName): op.append(o)
+        return list(op)
+
+    def locateRelatedChildren(self, Name, Class):
+        op = []
+        for o in list(self.CHILDS):
+            if dump(o)[0] is str(Name) and dump(o)[1] is str(Class)): op.append(o)
         return list(op)
