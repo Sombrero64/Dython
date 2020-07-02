@@ -1,6 +1,6 @@
 !["Python#'s logo."](https://raw.githubusercontent.com/Sombrero64/Python-/master/docs/logo/PythonSharpLogo.png)
 
-**Python#** is a free open-source Python library/module that allows the convenient creation of objects, and pently of useful features when making a Python project.
+**Python#** is a free open-source Python library/module that allows the convenient creation of objects, and plenty of useful features when making a Python project.
 
 ### **[Documentation](https://sombrero64.github.io/Python-/doc)**
 
