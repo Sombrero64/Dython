@@ -211,5 +211,5 @@ class Instance():
     def locateRelatedChildren(self, Name, Class):
         op = []
         for o in list(self.CHILDS):
-            if dump(o)[0] is str(Name) and dump(o)[1] is str(Class)): op.append(o)
+            if dump(o)[0] is str(Name) and dump(o)[1] is str(Class): op.append(o)
         return list(op)
