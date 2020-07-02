@@ -11,6 +11,6 @@ This allows you to do the following:
 
 _The creator of Python#, Daniel, may would not be held liable with any software that uses Python#, and modifications of it as well._
 
-For more infomation about the license, [click here to read it on GitHub.](https://github.com/Sombrero64/Python-/blob/master/LICENSE)
+For more infomation about the license, [click here to read it on GitHub.](https://github.com/Sombrero64/PythonSharp/blob/master/LICENSE)
 
 Copyright (©) 2020 Daniel Lawson
