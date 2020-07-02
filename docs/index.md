@@ -1,4 +1,4 @@
-!["Python#'s logo."](https://raw.githubusercontent.com/Sombrero64/Python-/master/docs/logo/PythonSharpLogo.png)
+!["Python#'s logo."](https://raw.githubusercontent.com/Sombrero64/PythonSharp/master/docs/logo/PythonSharpLogo.png)
 
 **Python#** is a free open-source Python library/module that allows the convenient creation of objects, and plenty of useful features when making a Python project.
 
