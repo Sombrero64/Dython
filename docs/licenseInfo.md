@@ -1,14 +1,14 @@
-Dython uses the MIT license `(mit)`, this allows you to do the following.
+Python# uses the MIT license `(mit)`, which allows you to do petty much anything under one condition;
 
-- Use Dython in a commercial use.
-- Moddify Dython's script.
-- Distribute Dython modifications.
-- Use Dython privately.
+A copyright notice/credit of Python# should be included. If possible, include Python#'s license.
 
-You can distribute your product using it aslong you give credit to the use of Dython, and leave a copyright notice. If possible, please include Dython's license. 
+This allows you to do the following:
 
-For more infomation about the license, [click here to read it on GitHub.](https://github.com/Sombrero64/Dython/blob/master/LICENSE)
+- Use it in a commercial use.
+- Moddify its script.
+- Distribute modifications.
+- Use Python# privately.
 
-*It's quite important to note that only Dython's script uses this license. This applys that its logo is currently a copyright of Daniel Lawson. With that said, __please do not reupload Dython's textless logo as your own artwork.__*
+For more infomation about the license, [click here to read it on GitHub.](https://github.com/Sombrero64/Python-/blob/master/LICENSE)
 
 Copyright (©) 2020 Daniel Lawson
