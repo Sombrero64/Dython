@@ -1,14 +1,10 @@
-!["Dython's logo; a yellow snake going around a monitor."](https://raw.githubusercontent.com/Sombrero64/Dython/master/docs/DythonLogo.png)
+**Python#** is a free open-source Python library/module that allows the convenient creation of objects, and pently of useful features when making a Python project.
 
-**Dython** is a free open-source Python library/module that contains pently of useful features when making a Python project.
+### **[Documentation](https://sombrero64.github.io/Python-/doc)**
 
-***[Dython's Documentation](https://sombrero64.github.io/Dython/doc)***
+### [License](https://sombrero64.github.io/Python-/licenseInfo)
 
-*[Dython's License](https://sombrero64.github.io/Dython/licenseInfo)*
-
-[Dython's Logos](https://sombrero64.github.io/Dython/logos)
-
-### Credits
+## Credits
 
 [Daniel Lawson](https://github.com/Sombrero64); creator
 
