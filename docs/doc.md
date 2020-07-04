@@ -129,51 +129,102 @@ Python# (Python Sharp) is a free open-source Python module created by Daniel Law
   To allow an empty response, set _third_ to true. If the user provided as such, it would return ***None***.
 
 ### Local Variables
-**Local Variables** (formerly called Temporary Variables) allows you to make variables for temporary use. After their main use is over, they can be removed later on.
+**Local Variables** allows you to make variables for temporary use. After their main use is over, they can be removed later on. These variables can also be renamed as well. Let's assign `localment()` to **`teams`** to make it a home for variables regrading teams.
 
 ```py
-myLocals = local()
+teams = localment()
 ```
 
-- `add()`: defines/created a local variable named after _first_. Its starting value would be _secound_.
+  - `new()` & `define()`: creates a local variable named after _first_. The *`new()`* function would set the value to ***None***. The other one, *`define()`*, whould set it to _secound_.
 
   ```py
-  myLocals.add("Health", 100)
+  teams.define('red', 0)
+  teams.define('blue', 0)
+  teams.define('yellow', 0)
+  teams.define('green', 0)
   ```
 
-- `set()`: changes a local variable's (_first_) value to the _secound_
+  - `set()`: changes the value of a local variable (_first_) to _secound_.
 
   ```py
-  myLocals.add("Health", 100)
+  teams.set('red', 8)
+  teams.set('blue', 10)
+  teams.set('yellow', 2)
+  teams.set('green', 5)
+  ```
+
+  - `get()`: returns the value of a local variable (_first_). Returns ***None*** if variable doesn't exist.
+
+  ```py
+  print(teams.get('red'))
+  print(teams.get('blue'))
+  print(teams.get('yellow'))
+  print(teams.get('green'))
+  print(teams.get('purple'))
+  ```
+  ```
+  8
+  10
+  2
+  5
+  None
+  ```
   
-  myLocals.set("Health", 75)
-  ```
-
-- `get()`: gets the value of a local variable. (_secound_) Returns ***None*** if no such variable exists.
-
-  ```py
-  myLocals.add("Health", 100)
+  - `find()`: returns the name of a variable in their housing variable based on index (_first_). Returns ***None*** if variable doesn't exist.
   
-  print(myLocals.get("Health"))
-  ```
-  ```
-  100
-  ```
-
-- `sup()`: removes a local variable. (_first_)
-
   ```py
-  myLocals.add("Health", 100)
-  myLocals.sup("Health")
-
-  print(myLocals.get("Health"))
+  print(teams.find(0)) # red
+  print(teams.find(1)) # blue
+  print(teams.find(2)) # yellow
+  print(teams.find(3)) # green
+  print(teams.find(4)) # purple (doesn't exist)
   ```
   ```
+  red
+  blue
+  yellow
+  green
   None
   ```
 
+  - `rename()`: renames a local variable (_first_) to _secound_.
+  
+  ```py
+  teams.rename('red', 'Red Team')
+  teams.rename('blue', 'Blue Team')
+  teams.rename('yellow', 'Yellow Team')
+  teams.rename('green', 'Green Team')
+  ```
+  
+  - `remove()`: remove a local varaible (_first_).
+  
+  ```py
+  teams.remove('yellow')
+
+  print(teams.get('red'))
+  print(teams.get('blue'))
+  print(teams.get('yellow'))
+  print(teams.get('green'))
+  ```
+  ```
+  8
+  10
+  None
+  5
+  ```
+  
+  - `items()`: returns the list of all local variables in a variable.
+  
+  ```py
+  print(teams.items())
+  ```
+  
+  ```
+  [['red', 8], ['blue', 10], ['green', 5]]
+  ```
+
 ### Objects
-**Objects** is a feature that allows you to create instances that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to a variable to make a master object (service).
+**Objects** is a feature that allows you to create instances that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to **`workspace`** to make a master object (service).
 
 ```py
 workspaceProps = [prop('Project Name', 'Project')]
@@ -213,7 +264,7 @@ These functions would gather and modify infomation about an object; their subjec
   [['Project Name', 'Project', 'Project'], ['Oragnic?', False, False]]
   ```
   
-- `findProp()`: returns a list of a prop (_first_ = name)'s infomation: name, current value, and default value.
+- `findProp()`: returns a list of a prop (_first_)'s infomation: name, current value, and default value.
 
   ```py
   print(workspace.findProp('Project Name'))
@@ -222,7 +273,7 @@ These functions would gather and modify infomation about an object; their subjec
   ['Project Name', 'Project', 'Project']
   ```
   
-- `gitProp()`: returns the current value of a prop (_first_ = name).
+- `gitProp()`: returns the current value of a prop (_first_).
 
   ```py
   print(workspace.gitProp('Project Name'))
@@ -231,7 +282,7 @@ These functions would gather and modify infomation about an object; their subjec
   Project
   ```
   
-- `sitProp()`: sets the value of a prop (_first_ = name) to _secound_. Use `ritProp()` to set the prop to the default value.
+- `sitProp()`: sets the value of a prop (_first_) to _secound_. Use `ritProp()` to set the prop to the default value.
 
   ```py
   workspace.sitProp('Project Name', 'Cool Game')
