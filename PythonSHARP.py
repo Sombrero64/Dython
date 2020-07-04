@@ -1,3 +1,8 @@
+# Contrants
+menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
+menuFunctionLowFalse = "argument 'options' should contain at least 2 options to pick from as a list. In order for one option, you must provide True to the third argument, 'noAnwser'."
+menuFunctionGenral = "function 'menu()' encountered an error, please report this iusses."
+
 # Oprations
 def itemsMerge(var):
     num = 0
@@ -42,7 +47,39 @@ def filterList(var, item):
     for j in list(var):
         if not j is item: items.append(j)
     return list(items)
+
+def menu(caption, options, noAnwser):
+    if caption != "" and caption != None: print(str(caption))
+    if int(len(options)) == 0:
+        raise ValueError(menuFunctionLow)
+    elif int(len(options)) == 1 and not bool(noAnwser):
+        raise ValueError(menuFunctionLowFalse)
+    for optionCount in range(len(options)):
+        print(str(optionCount) + ": " + str(options[optionCount]))
+    while True:
+        optionAnwser = input("└> ")
+        try:
+            testAnwser = int(optionAnwser)
+            mest = "int"
+        except ValueError:
+            try:
+                testAnwser = float(optionAnwser)
+                mest = "float"
+            except ValueError:
+                try:
+                    testAnwser = str(optionAnwser)
+                    mest = "str"
+                except:
+                    raise RuntimeError(menuFunctionGenral)
+        if mest == "int" or mest == "float":
+            if mest == "float": testAnwser = int(round(float(testAnwser)))
+            optionAnswer = testAnwser
+            if int(optionAnswer) >= 0 and int(optionAnswer) < int(len(options)): return int(optionAnswer)
+        elif mest == "str":
+            if bool(noAnwser) and str(optionAnwser) == "": return None
         
+# Local Variables
+
 class localment():
     def __init__(self): self.CONTENT = []
 
@@ -84,38 +121,6 @@ class localment():
 
     def items(self): return list(self.CONTENT)
 
-# Console
-def menu(caption, options, noAnwser):
-    print('')
-    if caption != "" and caption != None: print(str(caption))
-    if int(len(options)) <= 1:
-        print("error in a menu() function")
-        exit
-    for optionCount in range(len(options)):
-        print(str(optionCount) + ": " + str(options[optionCount]))
-    while True:
-        optionAnwser = input("└> ")
-        try:
-            testAnwser = int(optionAnwser)
-            mest = "int"
-        except ValueError:
-            try:
-                testAnwser = float(optionAnwser)
-                mest = "float"
-            except ValueError:
-                try:
-                    testAnwser = str(optionAnwser)
-                    mest = "str"
-                except:
-                    print("error in a menu() function")
-                    exit
-        if mest == "int" or mest == "float":
-            if mest == "float": testAnwser = int(round(float(testAnwser)))
-            optionAnswer = testAnwser
-            if int(optionAnswer) >= 0 and int(optionAnswer) < int(len(options)): return int(optionAnswer)
-        elif mest == "str":
-            if bool(noAnwser) and str(optionAnwser) == "": return None
-
 # Objects
 # object: [subject, class, children, props]
 # prop: [name, value, default]
@@ -123,18 +128,8 @@ def menu(caption, options, noAnwser):
 def prop(name, value): return [str(name), value, value]
 
 def dump(Instance):
-    try: return [
-        Instance.SUB,
-        Instance.CLASS,
-        Instance.PROPS,
-        Instance.CHILDS,
-        ]
-    except: return [
-        Instance[0].SUB,
-        Instance[0].CLASS,
-        Instance[0].PROPS,
-        Instance[0].CHILDS,
-        ]
+    try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS]
+    except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS]
 
 class Instance():
     def __init__(self, Subject, Class, Props):
@@ -202,7 +197,7 @@ class Instance():
             if self.CHILDS[oj] is Children: self.CHILDS[oj] = NewObject
 
     # Find Objects
-    def children(self): return list(self.CHILDS)
+    def getChildren(self): return list(self.CHILDS)
 
     def findChild(self, ChildName):
         for o in list(self.CHILDS):
