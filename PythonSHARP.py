@@ -43,35 +43,46 @@ def filterList(var, item):
         if not j is item: items.append(j)
     return list(items)
         
-# Local Variables
-class local():
-    def __init__(self): self.locals = []
+class localment():
+    def __init__(self): self.CONTENT = []
 
-    def add(self, name, start):
-        b = True
-        for i in list(self.locals):
-            if list(i)[0] is str(name):
-                b = False
-                break
-        if bool(b): self.locals.append([str(name), start])
+    def new(self, Name):
+        for i in list(self.CONTENT):
+            if str(list(i)[0]) is str(Name): break
+        self.CONTENT.append([str(Name), None])
 
-    def set(self, name, value):
-        for j in range(int(len(self.locals))):
-            if list(self.locals[j])[0] is str(name): self.locals[int(j)] = [str(name), value]
-            break
+    def define(self, Name, Value):
+        for i in list(self.CONTENT):
+            if str(list(i)[0]) is str(Name): break
+        self.CONTENT.append([str(Name), Value])
 
-    def get(self, name):
-        for i in list(self.locals):
-            if list(i)[0] is str(name):
-                return list(i)[1]
+    def set(self, Name, New):
+        for i in list(self.CONTENT):
+            if str(list(i)[0]) is str(Name): i[1] = New
+
+    def rename(self, Name, New):
+        for i in list(self.CONTENT):
+            if str(list(i)[0]) is str(Name): i[0] = str(New)
+
+    def get(self, Name):
+        for i in list(self.CONTENT):
+            if str(list(i)[0]) is str(Name): return i[1]
+
+    def find(self, Index):
+        for i in range(len(self.CONTENT)):
+            if int(i) == int(Index): return self.CONTENT[Index][0]
         return None
 
-    def sup(self, name):
-        for i in range(len(list(self.locals))):
-            if list(self.locals[i])[0] is str(name):
-                self.locals.pop(i)
-                
-        
+    def remove(self, Name):
+        for i in range(len(self.CONTENT)):
+            try:
+                if str(Name) is str(self.CONTENT[i][0]):
+                    self.CONTENT.pop(i)
+            except IndexError:
+                if str(Name) is str(self.CONTENT[0][0]):
+                    self.CONTENT.pop(i)
+
+    def items(self): return list(self.CONTENT)
 
 # Console
 def menu(caption, options, noAnwser):
