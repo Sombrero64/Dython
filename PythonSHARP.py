@@ -2,12 +2,23 @@
 menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
 menuFunctionLowFalse = "argument 'options' should contain at least 2 options to pick from as a list. In order for one option, you must provide True to the third argument, 'noAnwser'."
 menuFunctionGenral = "function 'menu()' encountered an error, please report this iusses."
+waitForChildDelay = "possible infinite wait for child with function 'waitForChild()'"
+waitForFirstChildDelay = "possible infinite wait for child with function 'waitForFirstChild()'"
+waitForTheChildDelay = "possible infinite wait for child with function 'waitForTheChild()'"
+newChildNil = "new instance on 'newChild()' isn't object"
+LOCALchangeType = "local varible must match the changer's type"
 
 # Oprations
-def itemsMerge(var):
+def itemsAddty(var):
     num = 0
     for i in list(var):
         num += float(i)
+    return num
+
+def itemsSubty(var):
+    num = 0
+    for i in list(var):
+        num -= float(i)
     return num
 
 def itemsMulty(var):
@@ -80,22 +91,42 @@ def menu(caption, options, noAnwser):
         
 # Local Variables
 
-class localment():
+class Localment():
     def __init__(self): self.CONTENT = []
 
     def new(self, Name):
+        testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name): break
-        self.CONTENT.append([str(Name), None])
+            if str(list(i)[0]) is str(Name):
+                testBool = False
+                break
+        if bool(testBool): self.CONTENT.append([str(Name), None])
 
     def define(self, Name, Value):
+        testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name): break
-        self.CONTENT.append([str(Name), Value])
+            if str(list(i)[0]) is str(Name):
+                testBool = False
+                break
+        if bool(testBool): self.CONTENT.append([str(Name), Value])
 
     def set(self, Name, New):
         for i in list(self.CONTENT):
             if str(list(i)[0]) is str(Name): i[1] = New
+
+    def change(self, Name, Change):
+        for i in list(self.CONTENT):
+            try:
+                if str(list(i)[0]) is str(Name): i[1] += Change
+            except TypeError:
+                raise TypeError(LOCALchangeType)
+
+    def bange(self, Name, Change)
+        for i in list(self.CONTENT):
+            try:
+                if str(list(i)[0]) is str(Name): i[1] -= Change
+            except TypeError:
+                raise TypeError(LOCALchangeType)
 
     def rename(self, Name, New):
         for i in list(self.CONTENT):
@@ -119,7 +150,7 @@ class localment():
                 if str(Name) is str(self.CONTENT[0][0]):
                     self.CONTENT.pop(i)
 
-    def items(self): return list(self.CONTENT)
+    def variables(self): return list(self.CONTENT)
 
 # Objects
 # object: [subject, class, children, props]
@@ -186,8 +217,11 @@ class Instance():
 
     # Objects
     def newChild(self, Instance):
-        Instance.PARENT = self
-        self.CHILDS.append(Instance)
+        if Instance == None:
+            raise ValueError(newChildNil)
+        else:
+            Instance.PARENT = self
+            self.CHILDS.append(Instance)
 
     def clearChild(self, Child):
         for oj in range(int(len(list(self.CHILDS)))):
@@ -216,6 +250,10 @@ class Instance():
 
     # Find Objects
     def getChildren(self): return list(self.CHILDS)
+
+    def getChildbyIndex(self, Index):
+        try: return list(self.CHILDS)[int(Index)]
+        except ValueError: return list(self.CHILDS)[int(round(float(Index)))]
 
     def findChild(self, ChildName):
         for o in list(self.CHILDS):
@@ -249,3 +287,30 @@ class Instance():
         for o in list(self.CHILDS):
             if dump(o)[0] is str(Name) and dump(o)[1] is str(Class): op.append(o)
         return list(op)
+
+    def waitForChild(self, ChildName):
+        delay = 0
+        while True:
+            for o in list(self.CHILDS):
+                if dump(o)[0] is str(ChildName): return o
+            delay += 1
+            if delay >= 1500:
+                raise RuntimeError(waitForChildDelay)      
+
+    def waitForFirstChild(self, ChildClass):
+        delay = 0
+        while True:
+            for o in list(self.CHILDS):
+                if dump(o)[1] is str(ChildClass): return o
+            delay += 1
+            if delay >= 1500:
+                raise RuntimeError(waitForFirstChildDelay)
+
+    def waitForSpecificChild(self, ChildName, ChildClass):
+        delay = 0
+        while True:
+            for o in list(self.CHILDS):
+                if dump(o)[0] is str(ChildName) and dump(o)[1] is str(ChildClass): return o
+            delay += 1
+            if delay >= 1500:
+                raise RuntimeError(waitForTheChildDelay)
