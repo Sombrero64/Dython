@@ -121,7 +121,7 @@ class Localment():
             except TypeError:
                 raise TypeError(LOCALchangeType)
 
-    def bange(self, Name, Change)
+    def bange(self, Name, Change):
         for i in list(self.CONTENT):
             try:
                 if str(list(i)[0]) is str(Name): i[1] -= Change
