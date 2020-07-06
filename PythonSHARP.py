@@ -10,7 +10,7 @@ LOCALchangeType = "local varible must match the changer's type"
 
 # Oprations
 def itemsAddty(var):
-    num = 0
+    num = list(var)[0] * 2
     for i in list(var):
         num += float(i)
     return num
