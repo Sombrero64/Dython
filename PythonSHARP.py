@@ -128,8 +128,8 @@ class localment():
 def prop(name, value): return [str(name), value, value]
 
 def dump(Instance):
-    try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS]
-    except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS]
+    try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS, Instance.PARENT]
+    except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS, Instance[0].PARENT]
 
 class Instance():
     def __init__(self, Subject, Class, Props):
@@ -137,11 +137,18 @@ class Instance():
         self.CLASS = str(Class)
         self.PROPS = list(Props)
         self.CHILDS = []
+        self.PARENT = None
 
     # Info
-    def gitSub(self): return self.SUB
-    def gitClass(self): return self.CLASS
-    def gitProps(self): return self.PROPS
+    def gitSub(self):
+        if self == None: return None
+        else: return self.SUB
+    def gitClass(self):
+        if self == None: return None
+        else: return self.CLASS
+    def gitProps(self):
+        if self == None: return None
+        else: return self.PROPS
 
     def sitSub(self, New): self.SUB = str(New)
     def sitClass(self, New): self.CLASS = str(New)
@@ -171,8 +178,16 @@ class Instance():
                 p[1] = p[2]
                 break
 
+    def assignParentAs(self, NewParent): self.PARENT = NewParent
+
+    def parent(self):
+        if self.PARENT == None: return None
+        else: return self.PARENT
+
     # Objects
-    def newChild(self, Instance): self.CHILDS.append(Instance)
+    def newChild(self, Instance):
+        Instance.PARENT = self
+        self.CHILDS.append(Instance)
 
     def clearChild(self, Child):
         for oj in range(int(len(list(self.CHILDS)))):
