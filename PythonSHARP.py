@@ -205,11 +205,14 @@ class Instance():
         for oj in range(int(len(list(self.CHILDS)))):
             if self.CHILDS[oj] is Child:
                 self.CHILDS[oj] = NewChild
+                self.CHILDS[oj].PARENT = self
                 break
 
     def replaceChildren(self, Children, NewObject):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] is Children: self.CHILDS[oj] = NewObject
+            if self.CHILDS[oj] is Children:
+                self.CHILDS[oj] = NewObject
+                self.CHILDS[oj].PARENT = self
 
     # Find Objects
     def getChildren(self): return list(self.CHILDS)
