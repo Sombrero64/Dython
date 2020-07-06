@@ -17,13 +17,22 @@ Python# (Python Sharp) is a free open-source Python module created by Daniel Law
 
 ## Functions
 
-- `itemsMerge()`: returns a number when adding/subtracting all items in a list (_first_).
+- `itemsAddty()`: returns the sum of all items in a list (_first_).
 
   ```py
-  print(itemsMerge([42, 5, -2]))
+  print(itemsAddty([42, 5, -2]))
   ```
   ```
   45.0
+  ```
+  
+- `itemsSubty()`: returns the diffence of all items in a list (_first_).
+
+  ```py
+  print(itemsSubty([100, 50, 25, 5]))
+  ```
+  ```
+  20.0
   ```
 
 - `itemsMulty()`: returns the product of all items in a list (_first_).
