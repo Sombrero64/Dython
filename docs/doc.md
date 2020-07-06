@@ -129,10 +129,10 @@ Python# (Python Sharp) is a free open-source Python module created by Daniel Law
   To allow an empty response, set _third_ to true. If the user provided as such, it would return ***None***.
 
 ### Local Variables
-**Local Variables** allows you to make variables for temporary use. After their main use is over, they can be removed later on. These variables can also be renamed as well. Let's assign `localment()` to **`teams`** to make it a home for variables regrading teams.
+**Local Variables** allows you to make variables for temporary use. After their main use is over, they can be removed later on. These variables can also be renamed as well. Let's assign `Localment()` to **`teams`** to make it a home for variables regrading teams.
 
 ```py
-teams = localment()
+teams = Localment()
 ```
 
   - `new()` & `define()`: creates a local variable named after _first_. The *`new()`* function would set the value to ***None***. The other one, *`define()`*, whould set it to _secound_.
@@ -151,6 +151,20 @@ teams = localment()
   teams.set('blue', 10)
   teams.set('yellow', 2)
   teams.set('green', 5)
+  ```
+  
+  - `change()`: increases the value of an variable (_first_) by _secound_. Using `bange()` world decrease it.
+  
+  ```py
+  teams.define('red', 0)
+  teams.define('blue', 0)
+  teams.define('yellow', 0)
+  teams.define('green', 0)
+  
+  teams.change('red', 8)
+  teams.change('blue', 10)
+  teams.chnage('yellow', -2)
+  teams.change('green', 5)
   ```
 
   - `get()`: returns the value of a local variable (_first_). Returns ***None*** if variable doesn't exist.
@@ -213,10 +227,10 @@ teams = localment()
   5
   ```
   
-  - `items()`: returns the list of all local variables in a variable.
+  - `variables()`: returns the list of all local variables in a variable.
   
   ```py
-  print(teams.items())
+  print(teams.variables())
   ```
   
   ```
@@ -404,4 +418,22 @@ These functions would gather and modify infomation about an object; their subjec
 
   ```py
   workspace.locateRelatedChildren('Score', 'IntScore')
+  ```
+
+- `waitForChild()`: waits for a child (_first_) in a instance to exist \[subject]\. Delays the script until found.
+  
+  ```py
+  workspace.waitForChild('Score')
+  ```
+  
+- `waitForFirstChild()`: waits for a child (_first_) in a instance to exist \[class]\. Delays the script until found.
+
+  ```py
+  workspace.waitForFirstChild('IntStore')
+  ```
+  
+- `waitForSpecificChild()`: waits for a child (_first_ & _secound_) in a instance to exist \[name & class]\. Delays the script until found.
+
+  ```py
+  workspace.waitForSpecificChild('Score', IntStore)
   ```
