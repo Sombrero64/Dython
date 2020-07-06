@@ -332,13 +332,33 @@ These functions would gather and modify infomation about an object; their subjec
   ```py
   workspace.replaceChildren(children, newObj)
   ```
+
+- `parent()`: returns the object's parent as an object, allowing you to get its subject, class, props, and even children. You can also moddify them and manage their children.
+
+  ```py
+  workspace.newChild(Instance('Some Object', 'object', []))
+  someObject = workspace.findChild('Some Object')
+
+  print(someObject.gitSub())
+  print(someObject.parent().gitSub())
+  ```
+  ```
+  Some Object
+  Workspace
+  ```
+  
+  If necessary, you can use the `assignParentAs()` function to change an object's parent.
+  
+  ```py
+  someObject.assignParentAs(objectStore)
+  ```
   
 #### Children Locator Functions
 
-- `children()`: returns the list of all children from an instance.
+- `getChildren()`: returns the list of all children from an instance.
 
   ```py
-  print(workspace.children())
+  print(workspace.getChildren())
   ```
   
 - `findChild()`: finds the first child named as such (_first_) from an instance. Returns ***None*** if no child exist named as such.
