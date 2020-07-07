@@ -4,7 +4,7 @@ menuFunctionLowFalse = "argument 'options' should contain at least 2 options to 
 menuFunctionGenral = "function 'menu()' encountered an error, please report this iusses."
 waitForChildDelay = "possible infinite wait for child with function 'waitForChild()'"
 waitForFirstChildDelay = "possible infinite wait for child with function 'waitForFirstChild()'"
-waitForTheChildDelay = "possible infinite wait for child with function 'waitForTheChild()'"
+waitForSpecificChildDelay = "possible infinite wait for child with function 'waitForSpecificChild()'"
 newChildNil = "new instance on 'newChild()' isn't object"
 LOCALchangeType = "local varible must match the changer's type"
 
@@ -172,13 +172,13 @@ class Instance():
 
     # Info
     def gitSub(self):
-        if self == None: return None
+        if self is None: return None
         else: return self.SUB
     def gitClass(self):
-        if self == None: return None
+        if self is None: return None
         else: return self.CLASS
     def gitProps(self):
-        if self == None: return None
+        if self is None: return None
         else: return self.PROPS
 
     def sitSub(self, New): self.SUB = str(New)
@@ -212,7 +212,7 @@ class Instance():
     def assignParentAs(self, NewParent): self.PARENT = NewParent
 
     def parent(self):
-        if self.PARENT == None: return None
+        if self.PARENT is None: return None
         else: return self.PARENT
 
     # Objects
@@ -313,4 +313,4 @@ class Instance():
                 if dump(o)[0] is str(ChildName) and dump(o)[1] is str(ChildClass): return o
             delay += 1
             if delay >= 1500:
-                raise RuntimeError(waitForTheChildDelay)
+                raise RuntimeError(waitForSpecificChildDelay)
