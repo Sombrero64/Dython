@@ -1,3 +1,10 @@
+# ████ █ █ ███ █ █ ███ █  █ #
+# █  █  █   █  █ █ █ █ ██ █
+# ████  █   █  ███ █ █ █ ██
+# █    █    █  █ █ █ █ █  █
+# █   █     █  █ █ ███ █  █
+#      Version 3.6.0
+
 # Contrants
 menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
 menuFunctionLowFalse = "argument 'options' should contain at least 2 options to pick from as a list. In order for one option, you must provide True to the third argument, 'noAnwser'."
@@ -7,6 +14,31 @@ waitForFirstChildDelay = "possible infinite wait for child with function 'waitFo
 waitForSpecificChildDelay = "possible infinite wait for child with function 'waitForSpecificChild()'"
 newChildNil = "new instance on 'newChild()' isn't object"
 LOCALchangeType = "local varible must match the changer's type"
+
+# Guide
+def info():
+    print('████ █ █ ███ █ █ ███ █  █ #')
+    print('█  █  █   █  █ █ █ █ ██ █')
+    print('████  █   █  ███ █ █ █ ██')
+    print('█    █    █  █ █ █ █ █  █')
+    print('█   █     █  █ █ ███ █  █')
+    print('''Version 3.6.0''')
+    print('')
+    print('''Python# (PythonSharp) is a free open source module for Python 3.8.3.''')
+    print('''Python# allows the branching, convenient creation of Objects with propterties.''')
+    print('''It also have local variables (stores clearable varaibles) and useful functions.''')
+    print('')
+    print('''Created by Daniel Lawson: Copyright (©) 2020 Daniel Lawson.''')
+    print('''Python# uses the MIT license (mit).''')
+    print('')
+    print('CREDITS')
+    print('▔▔▔▔▔▔▔▔▔')
+    print('Daniel Lawson')
+    print(''' Python# Creator''')
+    print('18001767679')
+    print(''' Contributing to Python#''')
+    print('''Dan's Papa (Grandfather)''')
+    
 
 # Oprations
 def itemsAddty(var):
