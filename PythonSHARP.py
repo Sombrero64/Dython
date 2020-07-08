@@ -3,7 +3,7 @@
 # ████  █   █  ███ █ █ █ ██
 # █    █    █  █ █ █ █ █  █
 # █   █     █  █ █ ███ █  █
-#      Version 3.6.0
+#      Version 3.7.1
 
 # Contrants
 menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
@@ -22,10 +22,10 @@ def info():
     print('████  █   █  ███ █ █ █ ██')
     print('█    █    █  █ █ █ █ █  █')
     print('█   █     █  █ █ ███ █  █')
-    print('''Version 3.6.0''')
+    print('''Version 3.7.1''')
     print('')
     print('''Python# (PythonSharp) is a free open source module for Python 3.8.3.''')
-    print('''Python# allows the branching, convenient creation of Objects with propterties.''')
+    print('''Python# allows the branching, convenient creation of objects with propterties.''')
     print('''It also have local variables (stores clearable varaibles) and useful functions.''')
     print('')
     print('''Created by Daniel Lawson: Copyright (©) 2020 Daniel Lawson.''')
@@ -62,7 +62,7 @@ def itemsMulty(var):
 def itemCount(var, item):
     count = 0
     for i in list(var):
-        if i is item: count += 1
+        if i == item: count += 1
     return int(count)
     
 def rangeLimit(num, MIN, MAX):
@@ -75,20 +75,20 @@ def feturn(con, true, false):
     
 def listInit(var, item):
     for j in range(len(list(var))):
-        if list(var)[j] is item: return int(j)
+        if list(var)[j] == item: return int(j)
     return None
     
 def listInits(var, item):
     items = []
     for j in range(len(list(var))):
-        if list(var)[j] is item: items.append(j)
+        if list(var)[j] == item: items.append(j)
     if items != []: return list(items)
     else: return None
         
 def filterList(var, item):
     items = []
     for j in list(var):
-        if not j is item: items.append(j)
+        if not j == item: items.append(j)
     return list(items)
 
 def menu(caption, options, noAnwser):
@@ -129,7 +129,7 @@ class Localment():
     def new(self, Name):
         testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name):
+            if str(list(i)[0]) == str(Name):
                 testBool = False
                 break
         if bool(testBool): self.CONTENT.append([str(Name), None])
@@ -137,36 +137,36 @@ class Localment():
     def define(self, Name, Value):
         testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name):
+            if str(list(i)[0]) == str(Name):
                 testBool = False
                 break
         if bool(testBool): self.CONTENT.append([str(Name), Value])
 
     def set(self, Name, New):
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name): i[1] = New
+            if str(list(i)[0]) == str(Name): i[1] = New
 
     def change(self, Name, Change):
         for i in list(self.CONTENT):
             try:
-                if str(list(i)[0]) is str(Name): i[1] += Change
+                if str(list(i)[0]) == str(Name): i[1] += Change
             except TypeError:
                 raise TypeError(LOCALchangeType)
 
     def bange(self, Name, Change):
         for i in list(self.CONTENT):
             try:
-                if str(list(i)[0]) is str(Name): i[1] -= Change
+                if str(list(i)[0]) == str(Name): i[1] -= Change
             except TypeError:
                 raise TypeError(LOCALchangeType)
 
     def rename(self, Name, New):
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name): i[0] = str(New)
+            if str(list(i)[0]) == str(Name): i[0] = str(New)
 
     def get(self, Name):
         for i in list(self.CONTENT):
-            if str(list(i)[0]) is str(Name): return i[1]
+            if str(list(i)[0]) == str(Name): return i[1]
 
     def find(self, Index):
         for i in range(len(self.CONTENT)):
@@ -176,10 +176,10 @@ class Localment():
     def remove(self, Name):
         for i in range(len(self.CONTENT)):
             try:
-                if str(Name) is str(self.CONTENT[i][0]):
+                if str(Name) == str(self.CONTENT[i][0]):
                     self.CONTENT.pop(i)
             except IndexError:
-                if str(Name) is str(self.CONTENT[0][0]):
+                if str(Name) == str(self.CONTENT[0][0]):
                     self.CONTENT.pop(i)
 
     def variables(self): return list(self.CONTENT)
@@ -204,13 +204,13 @@ class Instance():
 
     # Info
     def gitSub(self):
-        if self is None: return None
+        if self == None: return None
         else: return self.SUB
     def gitClass(self):
-        if self is None: return None
+        if self == None: return None
         else: return self.CLASS
     def gitProps(self):
-        if self is None: return None
+        if self == None: return None
         else: return self.PROPS
 
     def sitSub(self, New): self.SUB = str(New)
@@ -219,32 +219,32 @@ class Instance():
 
     def findProp(self, Prop):
         for p in list(self.PROPS):
-            if p[0] is str(Prop): return p
+            if p[0] == str(Prop): return p
         return None
     
     def gitProp(self, Prop):
         for p in list(self.PROPS):
             try:
-                if p[0] is str(Prop): return p[1]
+                if p[0] == str(Prop): return p[1]
             except: return p
         return None
 
     def sitProp(self, Prop, New):
         for p in list(self.PROPS):
-            if p[0] is str(Prop):
+            if p[0] == str(Prop):
                 p[1] = New
                 break
 
     def ritProp(self, Prop):
         for p in list(self.PROPS):
-            if p[0] is str(Prop):
+            if p[0] == str(Prop):
                 p[1] = p[2]
                 break
 
     def assignParentAs(self, NewParent): self.PARENT = NewParent
 
     def parent(self):
-        if self.PARENT is None: return None
+        if self.PARENT == None: return None
         else: return self.PARENT
 
     # Objects
@@ -257,74 +257,78 @@ class Instance():
 
     def clearChild(self, Child):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] is Child:
+            if self.CHILDS[oj] == Child:
                 self.CHILDS.pop(oj)
                 break
     
     def clearChildren(self, Children):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] is Children: self.CHILDS.pop(oj)
+            if self.CHILDS[oj] == Children: self.CHILDS.pop(oj)
 
     def clearAllChildren(self): self.CHILDS = []
 
     def replaceChild(self, Child, NewChild):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] is Child:
+            if self.CHILDS[oj] == Child:
                 self.CHILDS[oj] = NewChild
                 self.CHILDS[oj].PARENT = self
                 break
 
     def replaceChildren(self, Children, NewObject):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] is Children:
+            if self.CHILDS[oj] == Children:
                 self.CHILDS[oj] = NewObject
                 self.CHILDS[oj].PARENT = self
 
     # Find Objects
+    # > Get Children
     def getChildren(self): return list(self.CHILDS)
 
     def getChildbyIndex(self, Index):
         try: return list(self.CHILDS)[int(Index)]
         except ValueError: return list(self.CHILDS)[int(round(float(Index)))]
 
+    # > Find Child
     def findChild(self, ChildName):
         for o in list(self.CHILDS):
-            if dump(o)[0] is str(ChildName): return o
+            if dump(o)[0] == str(ChildName): return o
         return None
 
     def findFirstChild(self, ChildClass):
         for o in list(self.CHILDS):
-            if dump(o)[1] is str(ChildClass): return o
+            if dump(o)[1] == str(ChildClass): return o
         return None
 
     def locateForChild(self, ChildName, ChildClass):
         for o in list(self.CHILDS):
-            if dump(o)[0] is str(ChildName) and dump(o)[1] is str(ChildClass): return o
+            if dump(o)[0] == str(ChildName) and dump(o)[1] == str(ChildClass): return o
         return None
 
+    # > Find Children
     def findFirstChildren(self, ChildrenClass):
         op = []
         for o in list(self.CHILDS):
-            if dump(o)[1] is str(ChildrenClass): op.append(o)
+            if dump(o)[1] == str(ChildrenClass): op.append(o)
         return list(op)
 
     def findRelatedChildren(self, ChildrenName):
         op = []
         for o in list(self.CHILDS):
-            if dump(o)[0] is str(ChildrenName): op.append(o)
+            if dump(o)[0] == str(ChildrenName): op.append(o)
         return list(op)
 
     def locateRelatedChildren(self, Name, Class):
         op = []
         for o in list(self.CHILDS):
-            if dump(o)[0] is str(Name) and dump(o)[1] is str(Class): op.append(o)
+            if dump(o)[0] == str(Name) and dump(o)[1] == str(Class): op.append(o)
         return list(op)
 
+    # > Wait for Child
     def waitForChild(self, ChildName):
         delay = 0
         while True:
             for o in list(self.CHILDS):
-                if dump(o)[0] is str(ChildName): return o
+                if dump(o)[0] == str(ChildName): return o
             delay += 1
             if delay >= 1500:
                 raise RuntimeError(waitForChildDelay)      
@@ -333,7 +337,7 @@ class Instance():
         delay = 0
         while True:
             for o in list(self.CHILDS):
-                if dump(o)[1] is str(ChildClass): return o
+                if dump(o)[1] == str(ChildClass): return o
             delay += 1
             if delay >= 1500:
                 raise RuntimeError(waitForFirstChildDelay)
@@ -342,7 +346,58 @@ class Instance():
         delay = 0
         while True:
             for o in list(self.CHILDS):
-                if dump(o)[0] is str(ChildName) and dump(o)[1] is str(ChildClass): return o
+                if dump(o)[0] == str(ChildName) and dump(o)[1] == str(ChildClass): return o
             delay += 1
             if delay >= 1500:
                 raise RuntimeError(waitForSpecificChildDelay)
+
+    # > Does Child Exists?
+    def doesChildExist(self, ChildName):
+        for o in list(self.CHILDS):
+            if dump(o)[0] == str(ChildName): return True
+        return False
+
+    def doesFirstChildExist(self, ChildClass):
+        for o in list(self.CHILDS):
+            if dump(o)[1] == str(ChildClass): return True
+        return False
+
+    def doesSpecificChildExist(self, ChildName, ChildClass):
+        for o in list(self.CHILDS):
+            if dump(o)[0] == str(ChildName) and dump(o)[1] == str(ChildClass): return True
+        return False
+
+    # > Find Pairs
+    def findNamePairs(self, Object):
+        for o in list(self.CHILDS):
+            if dump(o)[0] == dump(Object)[0]: return o
+        return None
+
+    def findClassPairs(self, Object):
+        for o in list(self.CHILDS):
+            if dump(o)[1] == dump(Object)[1]: return o
+        return None
+
+    def findPairs(self, Object):
+        for o in list(self.CHILDS):
+            if dump(o)[0] == dump(Object)[0] and dump(o)[1] == dump(Object)[1]: return o
+        return None
+
+    # > Get Pairs
+    def getNamePairs(self, Object):
+        op = []
+        for o in list(self.CHILDS):
+            if dump(o)[0] == dump(Object)[0]: op.append(o)
+        return list(op)
+
+    def getClassPairs(self, Object):
+        op = []
+        for o in list(self.CHILDS):
+            if dump(o)[1] == dump(Object)[1]: op.append(o)
+        return list(op)
+
+    def getPairs(self, Object):
+        op = []
+        for o in list(self.CHILDS):
+            if dump(o)[0] == dump(Object)[0] and dump(o)[0] == dump(Object)[0]: op.append(o)
+        return list(op)
