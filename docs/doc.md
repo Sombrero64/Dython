@@ -315,6 +315,26 @@ These functions would gather and modify infomation about an object; their subjec
   Cool Game
   ```
   
+- `parent()`: returns the object's parent as an object, allowing you to get its subject, class, props, and even children. You can also moddify them and manage their children.
+
+  ```py
+  workspace.newChild(Instance('Some Object', 'object', []))
+  someObject = workspace.findChild('Some Object')
+
+  print(someObject.gitSub())
+  print(someObject.parent().gitSub())
+  ```
+  ```
+  Some Object
+  Workspace
+  ```
+  
+  If necessary, you can use the `assignParentAs()` function to change an object's parent.
+  
+  ```py
+  someObject.assignParentAs(objectStore)
+  ```
+  
 #### Children (Nested Objects) Functions
 
 - `newChild()`: adds a new object inside an instance.
@@ -355,26 +375,6 @@ These functions would gather and modify infomation about an object; their subjec
   ```py
   workspace.replaceChildren(children, newObj)
   ```
-
-- `parent()`: returns the object's parent as an object, allowing you to get its subject, class, props, and even children. You can also moddify them and manage their children.
-
-  ```py
-  workspace.newChild(Instance('Some Object', 'object', []))
-  someObject = workspace.findChild('Some Object')
-
-  print(someObject.gitSub())
-  print(someObject.parent().gitSub())
-  ```
-  ```
-  Some Object
-  Workspace
-  ```
-  
-  If necessary, you can use the `assignParentAs()` function to change an object's parent.
-  
-  ```py
-  someObject.assignParentAs(objectStore)
-  ```
   
 #### Children Locator Functions
 
@@ -384,7 +384,7 @@ These functions would gather and modify infomation about an object; their subjec
   print(workspace.getChildren())
   ```
   
-- `findChild()`: finds the first child named as such (_first_) from an instance. Returns ***None*** if no child exist named as such.
+- `findChild()`: finds the first child named as such (_first_) from an instance. Returns ***None*** if no child exists named as such.
 
   ```py
   print(workspace.findChild('Score').gitClass())
@@ -393,7 +393,7 @@ These functions would gather and modify infomation about an object; their subjec
   IntStore
   ```
   
-- `findFirstChild()`: finds the first child based on finding its class (_first_). Returns ***None*** if no child exist classed as such.
+- `findFirstChild()`: finds the first child based on finding its class (_first_). Returns ***None*** if no child exists classified as such.
 
   ```py
   print(workspace.findFirstChild('IntStore').gitSub())
@@ -402,7 +402,7 @@ These functions would gather and modify infomation about an object; their subjec
   Score
   ```
   
-- `locateForChild()`: finds the first child named (_first_) and classed (_secound_) as such. Returns ***None*** if no child exist named/classed as such.
+- `locateForChild()`: finds the first child named (_first_) and classified (_secound_) as such. Returns ***None*** if no child exists named/classified as such.
 
   ```py
   print(workspace.locateForChild('Score', 'IntStore').gitSub())
@@ -411,7 +411,7 @@ These functions would gather and modify infomation about an object; their subjec
   Score
   ```
 
-- `findFirstChildren()`: returns a list of objects that are classed (_first_) as such.
+- `findFirstChildren()`: returns a list of objects that are classified (_first_) as such.
 
   ```py
   workspace.findFirstChildren('IntStore')
@@ -423,26 +423,104 @@ These functions would gather and modify infomation about an object; their subjec
   workspace.findRelatedChildren('Score')
   ```
   
-- `locateRelatedChildren()`: returns a list of objects named (_first_) and classed (_secound_) as such.
+- `locateRelatedChildren()`: returns a list of objects named (_first_) and classified (_secound_) as such.
 
   ```py
   workspace.locateRelatedChildren('Score', 'IntScore')
   ```
 
-- `waitForChild()`: waits for a child (_first_) in a instance to exist \[subject]\. Delays the script until found.
+- `waitForChild()`: waits for a child (_first_) in an instance for their existence \[subject]\. Delays the script until found.
   
   ```py
   workspace.waitForChild('Score')
   ```
   
-- `waitForFirstChild()`: waits for a child (_first_) in a instance to exist \[class]\. Delays the script until found.
+- `waitForFirstChild()`: waits for a child (_first_) in an instance for their existence \[class]\. Delays the script until found.
 
   ```py
   workspace.waitForFirstChild('IntStore')
   ```
   
-- `waitForSpecificChild()`: waits for a child (_first_ & _secound_) in a instance to exist \[name & class]\. Delays the script until found.
+- `waitForSpecificChild()`: waits for a child (_first_ & _secound_) in an instance for their existence \[name & class]\. Delays the script until found.
 
   ```py
-  workspace.waitForSpecificChild('Score', IntStore)
+  workspace.waitForSpecificChild('Score', 'IntStore')
   ```
+
+- `doesChildExist()`: returns a Boolean if it's true if the instance owns a child named as such.
+
+  ```py
+  print(workspace.doesChildExist('Score'))
+  print(workspace.doesChildExist('HighScore'))
+  ```
+  ```
+  True
+  False
+  ```
+  
+- `doesFirstChildExist()`: returns a Boolean if it's true if the instance owns a child classified as such.
+
+  ```py
+  print(workspace.doesFirstChildExits('IntStore'))
+  print(workspace.doesFirstChildExits('StringStore'))
+  ```
+  ```
+  True
+  False
+  ```
+
+- `doesSpecificChildExist()`: returns a Boolean if it's true if the instance owns a child classified as such.
+
+  ```py
+  print(workspace.doesFirstChildExits('HighScore', 'IntStore'))
+  print(workspace.doesFirstChildExits('Score', 'IntStore'))
+  print(workspace.doesFirstChildExits('Name', 'StringStore'))
+  ```
+  ```
+  False
+  True
+  False
+  ```
+  
+- `findNamePairs()`: returns the first child in an instance that matches the name of another object. Returns ***None*** if no child exists named as such.
+
+  ```py
+  altScore = Instance('Score', 'NumberStore', [prop('Value', 0.0)])
+  print(workspace.findNamePairs(altScore).gitSub(),
+        workspace.findNamePairs(altScore).gitClass(),
+        workspace.findNamePairs(altScore).gitProps())
+  ```
+  ```
+  Score IntStore [['Value', 0, 0]]
+  ```
+  
+  Using `getNamePairs()` would return a list of children that matches the name of the object.
+  
+- `findClassPairs()`: returns the first child in an instance that matches the class of another object. Returns ***None*** if no child exists classified as such.
+
+  ```py
+  highScore = Instance('HighScore', 'IntStore', [prop('Value', 0)])
+  print(workspace.findClassPairs(highScore).gitSub(),
+        workspace.findClassPairs(highScore).gitClass(),
+        workspace.findClassPairs(highScore).gitProps())
+  ```
+  ```
+  Score IntStore [['Value', 0, 0]]
+  ```
+  
+  Using `getClassPairs()` would return a list of children that matches the clas of the object.
+
+- `findPairs()`: returns the first child in an instance that matches both the name & class of another object. Returns ***None*** if no matching child exists.
+
+  ```py
+  outsider = Instance('Score', 'IntStore', [prop('Value', 0)])
+  print(workspace.findPairs(outsider).gitSub(),
+        workspace.findPairs(outsider).gitClass(),
+        workspace.findPairs(outsider).gitProps())
+  ```
+  ```
+  Score IntStore [['Value', 0, 0]]
+  ```
+  
+  Using `getPairs()` would return a list of matching children.
+
