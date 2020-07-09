@@ -384,6 +384,25 @@ These functions would gather and modify infomation about an object; their subjec
   print(workspace.getChildren())
   ```
   
+- `getChildbyIndex()`: returns a children based on index.
+
+  ```py
+  workspace.newChild(Instance('Object1', 'object', []))
+  workspace.newChild(Instance('Object2', 'object', []))
+  workspace.newChild(Instance('Object3', 'object', []))
+  
+  print(workspace.getChildbyIndex(0).gitSub())
+  print(workspace.getChildbyIndex(1).gitSub())
+  print(workspace.getChildbyIndex(2).gitSub())
+  print(workspace.getChildbyIndex(3))
+  ```
+  ```
+  Object1
+  Object2
+  Object3
+  None
+  ```
+  
 - `findChild()`: finds the first child named as such (_first_) from an instance. Returns ***None*** if no child exists named as such.
 
   ```py
