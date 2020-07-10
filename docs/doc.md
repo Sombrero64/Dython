@@ -1,5 +1,7 @@
 # Documentation
-Python# (Python Sharp) is a free open-source Python module created by Daniel Lawson that allows the convenient creation of objects, with plenty of useful features when making a Python project. Download Python#: ([ZIP](https://github.com/Sombrero64/Python-/zipball/master)/[TAR](https://github.com/Sombrero64/Python-/tarball/master))
+__Python# (Python Sharp)__ is a free open-source Python module created by Daniel Lawson that allows the braching, convenient creation of objects.
+
+Download Python#: ([ZIP](https://github.com/Sombrero64/Python-/zipball/master)/[TAR](https://github.com/Sombrero64/Python-/tarball/master))
 
 ```py
 from PythonSHARP import *
