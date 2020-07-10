@@ -1,9 +1,5 @@
-# ████ █ █ ███ █ █ ███ █  █ #
-# █  █  █   █  █ █ █ █ ██ █
-# ████  █   █  ███ █ █ █ ██
-# █    █    █  █ █ █ █ █  █
-# █   █     █  █ █ ███ █  █
-#      Version 3.7.1
+# PYTHON #
+# Version 3.8.1
 
 # Contrants
 menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
@@ -14,6 +10,8 @@ waitForFirstChildDelay = "possible infinite wait for child with function 'waitFo
 waitForSpecificChildDelay = "possible infinite wait for child with function 'waitForSpecificChild()'"
 newChildNil = "new instance on 'newChild()' isn't object"
 LOCALchangeType = "local varible must match the changer's type"
+recordNone = "must be an Instance() or Localment() object."
+recordGenral = "function 'record()' encountered an error, please report this iusses."
 
 # Guide
 def info():
@@ -22,7 +20,7 @@ def info():
     print('████  █   █  ███ █ █ █ ██')
     print('█    █    █  █ █ █ █ █  █')
     print('█   █     █  █ █ ███ █  █')
-    print('''Version 3.7.1''')
+    print('''Version 3.8.1''')
     print('')
     print('''Python# (PythonSharp) is a free open source module for Python 3.8.3.''')
     print('''Python# allows the branching, convenient creation of objects with propterties.''')
@@ -59,6 +57,17 @@ def itemsMulty(var):
         num *= float(i)
     return num
 
+def itemsDidty(var):
+    num = list(var)[0]
+    passer = False
+    for i in list(var):
+        if bool(passer):
+            if float(i) == 0:
+                raise ZeroDivisionError('division by zero')
+            else: num /= float(i)
+        else: passer = True
+    return num
+
 def itemCount(var, item):
     count = 0
     for i in list(var):
@@ -88,7 +97,7 @@ def listInits(var, item):
 def filterList(var, item):
     items = []
     for j in list(var):
-        if not j == item: items.append(j)
+        if j != item: items.append(j)
     return list(items)
 
 def menu(caption, options, noAnwser):
@@ -188,11 +197,44 @@ class Localment():
 # object: [subject, class, children, props]
 # prop: [name, value, default]
 
+def intType(OBJ):
+    try:
+        a = OBJ.SUB
+        b = OBJ.CLASS
+        c = OBJ.PROPS
+        d = OBJ.CHILDS
+        e = OBJ.PARENT
+        return 'instance'
+    except:
+        try:
+            g = OBJ.CONTENT
+            return 'house'
+        except:
+            if OBJ == None: return None
+            else: return 'other'
+
 def prop(name, value): return [str(name), value, value]
 
 def dump(Instance):
     try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS, Instance.PARENT]
     except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS, Instance[0].PARENT]
+
+def record(Instance):
+    archive = None
+    if intType(Instance) == 'instance':
+        contents = dump(Instance)
+        print('SUBJECT: ' + contents[0])
+        print('CLASS: ' + contents[1])
+        if contents[4] == None: print('PARENT: None')
+        else: print('PARENT: ' + dump(contents[4])[0])
+    elif intType(Instance) == 'house':
+        contents = list(Instance.CONTENT)
+        for vm in list(contents):
+            print('local variable:', vm[0], '=', vm[1])
+    elif intType(Instance) == 'other':
+        raise ValueError(recordNone)
+    else:
+        raise RuntimeError(recordGenral)
 
 class Instance():
     def __init__(self, Subject, Class, Props):
@@ -287,6 +329,7 @@ class Instance():
     def getChildbyIndex(self, Index):
         try: return list(self.CHILDS)[int(Index)]
         except ValueError: return list(self.CHILDS)[int(round(float(Index)))]
+        except IndexError: return None
 
     # > Find Child
     def findChild(self, ChildName):
