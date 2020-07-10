@@ -1,6 +1,27 @@
 !["Python#'s logo."](https://raw.githubusercontent.com/Sombrero64/PythonSharp/master/docs/logo/PythonSharpLogo.png)
 
-**Python#** is a free open-source Python module that allows the convenient creation of objects, and plenty of useful features when making a Python project.
+**Python#** is a free open-source Python module that allows the braching, convenient creation of objects.
+
+```py
+from PythonSHARP import *
+
+playerInfoStuff = [
+    Instance('Health', 'IntStore', [prop('Value', 0)]),
+    Instance('Level', 'IntStore', [prop('Value', 1)]),
+    Instance('XP', 'FloatStore', [prop('Value', 0.0)]),
+    Instance('XP Max', 'FloatStore', [prop('Value', 10.0)]),
+    Instance('Health', 'IntStore', [prop('Value', 100)]),
+    Instance('Name', 'StringStore', [prop('Name', '')]),
+    Instance('Character', 'ObjectStore', [prop('Value', None)])
+    ]
+
+objects = Instance('ObjectStorage', 'service', [])
+
+objects.newChild(Instance('PlayerInfo', 'folder', []))
+playerInfo = objects.locateForChild('PlayerInfo', 'folder')
+
+for s in list(playerInfoStuff): playerInfo.newChild(s)
+```
 
 ### **[Documentation](https://sombrero64.github.io/PythonSharp/doc)**
 
