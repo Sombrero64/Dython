@@ -1,6 +1,27 @@
 # Documentation
 Python# (Python Sharp) is a free open-source Python module created by Daniel Lawson that allows the convenient creation of objects, with plenty of useful features when making a Python project. Download Python#: ([ZIP](https://github.com/Sombrero64/Python-/zipball/master)/[TAR](https://github.com/Sombrero64/Python-/tarball/master))
 
+```py
+from PythonSHARP import *
+
+playerInfoStuff = [
+    Instance('Health', 'IntStore', [prop('Value', 0)]),
+    Instance('Level', 'IntStore', [prop('Value', 1)]),
+    Instance('XP', 'FloatStore', [prop('Value', 0.0)]),
+    Instance('XP Max', 'FloatStore', [prop('Value', 10.0)]),
+    Instance('Health', 'IntStore', [prop('Value', 100)]),
+    Instance('Name', 'StringStore', [prop('Name', '')]),
+    Instance('Character', 'ObjectStore', [prop('Value', None)])
+    ]
+
+objects = Instance('ObjectStorage', 'service', [])
+
+objects.newChild(Instance('PlayerInfo', 'folder', []))
+playerInfo = objects.locateForChild('PlayerInfo', 'folder')
+
+for s in list(playerInfoStuff): playerInfo.newChild(s)
+```
+
 # Table of Contents
 
 - [Functions](#functions)
@@ -42,6 +63,15 @@ Python# (Python Sharp) is a free open-source Python module created by Daniel Law
   ```
   ```
   400.0
+  ```
+  
+- `itemsDidty()`: returns the quotient of all items in a list (_first_).
+
+  ```py
+  print(itemsDidty([42, 7, 3]))
+  ```
+  ```
+  2.0
   ```
 
 - `rangeLimit()`: sets a limit of the _first_'s range. If higher than the maximum (_secound_), it returns the _secound_'s value; and vice versa.
