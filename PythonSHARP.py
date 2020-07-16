@@ -1,5 +1,5 @@
 # PYTHON #
-# Version 3.8.1
+# Version 3.9.2
 
 # Contrants
 menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
@@ -12,6 +12,11 @@ newChildNil = "new instance on 'newChild()' isn't object"
 LOCALchangeType = "local varible must match the changer's type"
 recordNone = "must be an Instance() or Localment() object."
 recordGenral = "function 'record()' encountered an error, please report this iusses."
+itemsAddtyNon = "try using the itemsMerge() function instead of itemsAddty()"
+itemsAddtyGenral = "function 'itemsAddty()' encountered an error, please report this iusses."
+itemsSubtyNon = "try using the itemsDerge() function instead of itemsSubty()"
+itemsSubtyGenral = "function 'itemsSubty()' encountered an error, please report this iusses."
+cloneMaster = "cannot clone a master instance"
 
 # Guide
 def info():
@@ -20,7 +25,7 @@ def info():
     print('████  █   █  ███ █ █ █ ██')
     print('█    █    █  █ █ █ █ █  █')
     print('█   █     █  █ █ ███ █  █')
-    print('''Version 3.8.1''')
+    print('''Version 3.9.2''')
     print('')
     print('''Python# (PythonSharp) is a free open source module for Python 3.8.3.''')
     print('''Python# allows the branching, convenient creation of objects with propterties.''')
@@ -41,20 +46,32 @@ def info():
 # Oprations
 def itemsAddty(var):
     num = 0
-    for i in list(var):
-        num += float(i)
-    return num
+    try:
+        for i in list(var): num += float(i)
+        return float(num)
+    except ValueError:
+        raise ValueError(itemsAddtyNon)
+    except:
+        raise RuntimeError(itemsAddtyGenral)
+
+def itemsMerge(var):
+    value = ''
+    for i in list(var): value += str(i)
+    return str(value)
 
 def itemsSubty(var):
     num = list(var)[0] * 2
-    for i in list(var):
-        num -= float(i)
-    return num
+    try:
+        for i in list(var): num -= float(i)
+        return float(num)
+    except ValueError:
+        raise ValueError(itemsSubtyNon)
+    except:
+        raise RuntimeError(itemsSubtyGenral)
 
 def itemsMulty(var):
     num = 1
-    for i in list(var):
-        num *= float(i)
+    for i in list(var): num *= float(i)
     return num
 
 def itemsDidty(var):
@@ -74,10 +91,11 @@ def itemCount(var, item):
         if i == item: count += 1
     return int(count)
     
-def rangeLimit(num, MIN, MAX):
-    if int(num) > int(MAX): return int(MAX)
-    elif int(num) < int(MIN): return int(MIN)
-    else: return int(num)
+def rangeLimit(num, Min, Max):
+    NUM = float(num); MIN = float(Min); MAX = float(Max)
+    if NUM > MAX: return MAX
+    elif NUM < MIN: return MIN
+    else: return NUM
         
 def feturn(con, true, false):
     return true if bool(con) else false
@@ -100,8 +118,24 @@ def filterList(var, item):
         if j != item: items.append(j)
     return list(items)
 
-def menu(caption, options, noAnwser):
-    if caption != "" and caption != None: print(str(caption))
+def indexList(var, indexes):
+    items = []
+    for IN in list(indexes): items.append(list(var)[int(IN)])
+    return list(items)
+
+def findGreatest(var):
+    number = 0
+    for i in list(var):
+        if float(i) > number: number = i
+    return number
+
+def findSmallest(var):
+    number = float(list(var)[0])
+    for i in list(var):
+        if float(i) < number: number = i
+    return number
+
+def menu(options, noAnwser):
     if int(len(options)) == 0:
         raise ValueError(menuFunctionLow)
     elif int(len(options)) == 1 and not bool(noAnwser):
@@ -110,17 +144,11 @@ def menu(caption, options, noAnwser):
         print(str(optionCount) + ": " + str(options[optionCount]))
     while True:
         optionAnwser = input("└> ")
-        try:
-            testAnwser = int(optionAnwser)
-            mest = "int"
+        try: testAnwser = int(optionAnwser); mest = "int"
         except ValueError:
-            try:
-                testAnwser = float(optionAnwser)
-                mest = "float"
+            try: testAnwser = float(optionAnwser); mest = "float"
             except ValueError:
-                try:
-                    testAnwser = str(optionAnwser)
-                    mest = "str"
+                try: testAnwser = str(optionAnwser); mest = "str"
                 except:
                     raise RuntimeError(menuFunctionGenral)
         if mest == "int" or mest == "float":
@@ -138,17 +166,13 @@ class Localment():
     def new(self, Name):
         testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) == str(Name):
-                testBool = False
-                break
+            if str(list(i)[0]) == str(Name): testBool = False; break
         if bool(testBool): self.CONTENT.append([str(Name), None])
 
     def define(self, Name, Value):
         testBool = True
         for i in list(self.CONTENT):
-            if str(list(i)[0]) == str(Name):
-                testBool = False
-                break
+            if str(list(i)[0]) == str(Name): testBool = False; break
         if bool(testBool): self.CONTENT.append([str(Name), Value])
 
     def set(self, Name, New):
@@ -185,56 +209,29 @@ class Localment():
     def remove(self, Name):
         for i in range(len(self.CONTENT)):
             try:
-                if str(Name) == str(self.CONTENT[i][0]):
-                    self.CONTENT.pop(i)
+                if str(Name) == str(self.CONTENT[i][0]): self.CONTENT.pop(i)
             except IndexError:
-                if str(Name) == str(self.CONTENT[0][0]):
-                    self.CONTENT.pop(i)
+                if str(Name) == str(self.CONTENT[0][0]): self.CONTENT.pop(i)
+
+    def wipe(self): self.CONTENT = []
 
     def variables(self): return list(self.CONTENT)
 
 # Objects
 # object: [subject, class, children, props]
-# prop: [name, value, default]
-
-def intType(OBJ):
-    try:
-        a = OBJ.SUB
-        b = OBJ.CLASS
-        c = OBJ.PROPS
-        d = OBJ.CHILDS
-        e = OBJ.PARENT
-        return 'instance'
-    except:
-        try:
-            g = OBJ.CONTENT
-            return 'house'
-        except:
-            if OBJ == None: return None
-            else: return 'other'
-
-def prop(name, value): return [str(name), value, value]
+# prop: [name, value, default, category]
+# variable: [name, value]
 
 def dump(Instance):
     try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS, Instance.PARENT]
     except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS, Instance[0].PARENT]
 
-def record(Instance):
-    archive = None
-    if intType(Instance) == 'instance':
-        contents = dump(Instance)
-        print('SUBJECT: ' + contents[0])
-        print('CLASS: ' + contents[1])
-        if contents[4] == None: print('PARENT: None')
-        else: print('PARENT: ' + dump(contents[4])[0])
-    elif intType(Instance) == 'house':
-        contents = list(Instance.CONTENT)
-        for vm in list(contents):
-            print('local variable:', vm[0], '=', vm[1])
-    elif intType(Instance) == 'other':
-        raise ValueError(recordNone)
-    else:
-        raise RuntimeError(recordGenral)
+def rip(Inst):
+    ripper = Instance(Inst.SUB, Inst.CLASS, Inst.PROPS)
+    ripper.CHILDS = list(Inst.CHILDS)
+    ripper.PARENT = Inst.PARENT
+    ripper.VARIABLES = list(Inst.VARIABLES)
+    return ripper
 
 class Instance():
     def __init__(self, Subject, Class, Props):
@@ -243,21 +240,16 @@ class Instance():
         self.PROPS = list(Props)
         self.CHILDS = []
         self.PARENT = None
+        self.VARIABLES = []
 
     # Info
-    def gitSub(self):
-        if self == None: return None
-        else: return self.SUB
-    def gitClass(self):
-        if self == None: return None
-        else: return self.CLASS
-    def gitProps(self):
-        if self == None: return None
-        else: return self.PROPS
+    def Sub(self): return self.SUB
+    def Class(self): return self.CLASS
+    def Props(self): return self.PROPS
 
     def sitSub(self, New): self.SUB = str(New)
     def sitClass(self, New): self.CLASS = str(New)
-    def sitProps(self, New): self.PROPS = str(New)
+    def sitProps(self, New): self.PROPS = list(New)
 
     def findProp(self, Prop):
         for p in list(self.PROPS):
@@ -266,22 +258,16 @@ class Instance():
     
     def gitProp(self, Prop):
         for p in list(self.PROPS):
-            try:
-                if p[0] == str(Prop): return p[1]
-            except: return p
+            if p[0] == str(Prop): return p[1]
         return None
 
     def sitProp(self, Prop, New):
         for p in list(self.PROPS):
-            if p[0] == str(Prop):
-                p[1] = New
-                break
+            if p[0] == str(Prop): p[1] = New; break
 
     def ritProp(self, Prop):
         for p in list(self.PROPS):
-            if p[0] == str(Prop):
-                p[1] = p[2]
-                break
+            if p[0] == str(Prop): p[1] = p[2]; break
 
     def assignParentAs(self, NewParent): self.PARENT = NewParent
 
@@ -294,14 +280,23 @@ class Instance():
         if Instance == None:
             raise ValueError(newChildNil)
         else:
-            Instance.PARENT = self
-            self.CHILDS.append(Instance)
+            Instance.PARENT = self; self.CHILDS.append(Instance)
+
+    def clear(self):
+        if self.PARENT != None:
+            for oi in range(len(list(self.PARENT.CHILDS))):
+                if self.PARENT.CHILDS[oi] == self: self.PARENT.CHILDS.pop(oi)
+        else: self = None
+
+    def clone(self):
+        if self.PARENT != None: self.PARENT.CHILDS.append(self)
+        else:
+            raise AttributeError(cloneMaster)
 
     def clearChild(self, Child):
         for oj in range(int(len(list(self.CHILDS)))):
             if self.CHILDS[oj] == Child:
-                self.CHILDS.pop(oj)
-                break
+                self.CHILDS.pop(oj); break
     
     def clearChildren(self, Children):
         for oj in range(int(len(list(self.CHILDS)))):
@@ -311,16 +306,11 @@ class Instance():
 
     def replaceChild(self, Child, NewChild):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] == Child:
-                self.CHILDS[oj] = NewChild
-                self.CHILDS[oj].PARENT = self
-                break
+            if self.CHILDS[oj] == Child: self.CHILDS[oj] = NewChild; self.CHILDS[oj].PARENT = self; break
 
     def replaceChildren(self, Children, NewObject):
         for oj in range(int(len(list(self.CHILDS)))):
-            if self.CHILDS[oj] == Children:
-                self.CHILDS[oj] = NewObject
-                self.CHILDS[oj].PARENT = self
+            if self.CHILDS[oj] == Children: self.CHILDS[oj] = NewObject; self.CHILDS[oj].PARENT = self
 
     # Find Objects
     # > Get Children
@@ -328,7 +318,6 @@ class Instance():
 
     def getChildbyIndex(self, Index):
         try: return list(self.CHILDS)[int(Index)]
-        except ValueError: return list(self.CHILDS)[int(round(float(Index)))]
         except IndexError: return None
 
     # > Find Child
@@ -342,7 +331,7 @@ class Instance():
             if dump(o)[1] == str(ChildClass): return o
         return None
 
-    def locateForChild(self, ChildName, ChildClass):
+    def findSpecificChild(self, ChildName, ChildClass):
         for o in list(self.CHILDS):
             if dump(o)[0] == str(ChildName) and dump(o)[1] == str(ChildClass): return o
         return None
@@ -444,3 +433,25 @@ class Instance():
         for o in list(self.CHILDS):
             if dump(o)[0] == dump(Object)[0] and dump(o)[0] == dump(Object)[0]: op.append(o)
         return list(op)
+
+    # Instance Variables
+    def NEW(self, Name, Value):
+        testBool = True
+        for v in list(self.VARIABLES):
+            if list(v)[0] == str(Name): testBool = False; break
+        if bool(testBool): self.VARIABLES.append([str(Name), Value])
+
+    def GET(self, Name):
+        for v in list(self.VARIABLES):
+            if list(v)[0] == str(Name): return list(v)[1]
+        return None
+
+    def INDEX(self, Index): return list(list(self.VARIABLES)[int(Index)])[0]
+
+    def SET(self, Name, Value):
+        for v in list(self.VARIABLES):
+            if list(v)[0] == str(Name): v[1] = Value
+
+    def DEL(self, Name):
+        for vi in range(len(list(self.VARIABLES))):
+            if list(self.VARIABLES[vi])[0] == str(Name): self.VARIABLES.pop(vi)
