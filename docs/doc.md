@@ -30,13 +30,15 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
 
 - [Local Variables](#local-variables)
 
-- [Objects](#objects)
+- [Instances](#instances)
 
   - Info Functions
 
   - Children Functions
 
   - Children Locator Functions
+  
+  - Instance Variables
 
 ## Functions
 
@@ -296,8 +298,8 @@ teams = Localment()
   [['red', 8], ['blue', 10], ['green', 5]]
   ```
 
-### Objects
-**Objects** is a feature that allows you to create instances that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to **`workspace`** to make a master object (service).
+### Instances
+**Instances** is a feature that allows you to create branching objects that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to **`workspace`** to make a master object (service).
 
 ```py
 workspaceProps = [['Project Name', 'Project', 'untitled']]
