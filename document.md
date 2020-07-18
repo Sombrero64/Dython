@@ -151,6 +151,8 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
     5.2
     ```
     
+    `findGreatestIndex()` return the biggest item's index.
+    
  - `findSmallest()`: returns the smallest item in a list (_first_).
     
     ```py
@@ -159,6 +161,82 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
     ```
     0
     ```
+    
+    `findSmallestIndex()` return the biggest item's index.
+    
+- `reverse()`: returns a positive number to a negivite one, and vice versa.
+
+    ```py
+    print(reverse(2))
+    print(reverse(-3))
+    print(reverse(4.2))
+    print(reverse(-6.9))
+    ```
+    ```
+    -2.0
+    3.0
+    -4.2
+    6.9
+    ```
+    
+- `genNumList()`: generates a list containing numbers from _first_ to _secound_.
+
+    ```py
+    print(genNumList(1, 10))
+    ```
+    ```
+    [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+    ```
+    
+- `itemsInt()`, `itemsFloat()`, `itemsStr()`, `itemsList()`: converts all items in a list (_first_) to an integer, float, string, and list.
+
+    ```py
+    print(itemsInt([1.0, 2.0, 3.0]))
+    print(itemsFloat([4, 5, 6]))
+    print(itemsStr([7, 8, 9]))
+    print(itemsList(['first', 'secound', 'third']))
+    ```
+    ```
+    [1, 2, 3]
+    [4.0, 5.0, 6.0]
+    ['7', '8', '9']
+    [['first'], ['secound'], ['third']]
+    ```
+    
+- `truth()`: returns true, false, or ***None*** depending on _first_'s value. Returns _first_ if it doesn't match any keywords.
+
+    ```py
+    print(truth('yes'))
+    print(truth('no'))
+    print(truth('nothing'))
+    print(truth('abc'))
+    ```
+    ```
+    True
+    False
+    None
+    abc
+    ```
+    
+    ##### Keywords
+    - True
+        - true
+        - yes
+        - correct
+        - on
+        - 1
+    - False
+        - false
+        - no
+        - incorrect
+        - off
+        - 0
+    - None
+        - none
+        - nothing
+        - nil
+        - null
+        - _empty string_
 
 - `menu()`: allows you to provide a mutlichoice input into a console for the user to pick from. Provide a list of options with a list (_secound_).
   
