@@ -1,21 +1,16 @@
 # PYTHON #
-# Version 3.9.2
+# Version 3.10.2
 
 # Contrants
-menuFunctionLow = "argument 'options' should contain at least 2 options to pick from as a list."
-menuFunctionLowFalse = "argument 'options' should contain at least 2 options to pick from as a list. In order for one option, you must provide True to the third argument, 'noAnwser'."
-menuFunctionGenral = "function 'menu()' encountered an error, please report this iusses."
-waitForChildDelay = "possible infinite wait for child with function 'waitForChild()'"
-waitForFirstChildDelay = "possible infinite wait for child with function 'waitForFirstChild()'"
-waitForSpecificChildDelay = "possible infinite wait for child with function 'waitForSpecificChild()'"
-newChildNil = "new instance on 'newChild()' isn't object"
+menuFunctionLow = "must be at least 2 items"
+menuFunctionGenral = "function 'menu()' error"
+waitForChildDelay = "possible infinite wait for child"
+newChildNil = "new instance isn't required object"
 LOCALchangeType = "local varible must match the changer's type"
-recordNone = "must be an Instance() or Localment() object."
-recordGenral = "function 'record()' encountered an error, please report this iusses."
 itemsAddtyNon = "try using the itemsMerge() function instead of itemsAddty()"
-itemsAddtyGenral = "function 'itemsAddty()' encountered an error, please report this iusses."
+itemsAddtyGenral = "function 'itemsAddty()' error"
 itemsSubtyNon = "try using the itemsDerge() function instead of itemsSubty()"
-itemsSubtyGenral = "function 'itemsSubty()' encountered an error, please report this iusses."
+itemsSubtyGenral = "function 'itemsSubty()' error"
 cloneMaster = "cannot clone a master instance"
 
 # Guide
@@ -31,16 +26,16 @@ def info():
     print('''Python# allows the branching, convenient creation of objects with propterties.''')
     print('''It also have local variables (stores clearable varaibles) and useful functions.''')
     print('')
-    print('''Created by Daniel Lawson: Copyright (©) 2020 Daniel Lawson.''')
+    print('''Created by Daniel; copyright (©) 2020 Daniel Lawson.''')
+    print('github.com/Sombrero64')
+    print('sites.google.com/view/unclejimbo')
+    print('')
     print('''Python# uses the MIT license (mit).''')
     print('')
     print('CREDITS')
     print('▔▔▔▔▔▔▔▔▔')
-    print('Daniel Lawson')
-    print(''' Python# Creator''')
     print('18001767679')
-    print(''' Contributing to Python#''')
-    print('''Dan's Papa (Grandfather)''')
+    print("Dan's Papa (Grandfather)")
     
 
 # Oprations
@@ -124,10 +119,19 @@ def indexList(var, indexes):
     return list(items)
 
 def findGreatest(var):
-    number = 0
+    number = float(list(var)[0])
     for i in list(var):
         if float(i) > number: number = i
     return number
+
+def findGreatestIndex(var):
+    number = float(list(var)[0])
+    index = 0
+    for i in range(len(list(var))):
+        if float(list(var)[i]) > number:
+            number = var[i]
+            index = i
+    return index
 
 def findSmallest(var):
     number = float(list(var)[0])
@@ -135,13 +139,60 @@ def findSmallest(var):
         if float(i) < number: number = i
     return number
 
+def findSmallestIndex(var):
+    number = float(list(var)[0])
+    index = 0
+    for i in range(len(list(var))):
+        if float(list(var)[i]) < number:
+            number = var[i]
+            index = i
+    return index
+
+def reverse(value): return float(value - value * 2)
+
+def genNumList(nin, nax):
+    C = float(nin)
+    List = []
+
+    while True:
+        if not C > float(nax): List.append(float(C))
+        else: break
+        C += 1;
+    return list(List)
+
+def itemsInt(value):
+    newList = []
+    for i in list(value): newList.append(int(i))
+    return list(newList)
+
+def itemsFloat(value):
+    newList = []
+    for i in list(value): newList.append(float(i))
+    return list(newList)
+
+def itemsStr(value):
+    newList = []
+    for i in list(value): newList.append(str(i))
+    return list(newList)
+
+def itemsList(value):
+    newList = []
+    for i in list(value): newList.append([i])
+    return list(newList)
+
+def truth(value):
+    for s in list(['true', 'yes', 'correct', 'on', '1']):
+        if str(value) == s: return True
+    for s in list(['false', 'no', 'incorrect', 'off', '0']):
+        if str(value) == s: return False
+    for s in list(['none', 'nothing', 'nil', 'null', '']):
+        if str(value) == s: return None
+    return str(value)
+
 def menu(options, noAnwser):
-    if int(len(options)) == 0:
+    if int(len(options)) == 0 or (int(len(options)) == 1 and not bool(noAnwser)):
         raise ValueError(menuFunctionLow)
-    elif int(len(options)) == 1 and not bool(noAnwser):
-        raise ValueError(menuFunctionLowFalse)
-    for optionCount in range(len(options)):
-        print(str(optionCount) + ": " + str(options[optionCount]))
+    for optionCount in range(len(options)): print(str(optionCount) + ": " + str(options[optionCount]))
     while True:
         optionAnwser = input("└> ")
         try: testAnwser = int(optionAnwser); mest = "int"
@@ -223,8 +274,22 @@ class Localment():
 # variable: [name, value]
 
 def dump(Instance):
-    try: return [Instance.SUB, Instance.CLASS, Instance.PROPS, Instance.CHILDS, Instance.PARENT]
-    except: return [Instance[0].SUB, Instance[0].CLASS, Instance[0].PROPS, Instance[0].CHILDS, Instance[0].PARENT]
+    try: return [
+        Instance.SUB,
+        Instance.CLASS,
+        Instance.PROPS,
+        Instance.CHILDS,
+        Instance.PARENT,
+        Instance.VARIABLES
+        ]
+    except: return [
+        Instance[0].SUB,
+        Instance[0].CLASS,
+        Instance[0].PROPS,
+        Instance[0].CHILDS,
+        Instance[0].PARENT,
+        Instance[0].VARIABLES
+        ]
 
 def rip(Inst):
     ripper = Instance(Inst.SUB, Inst.CLASS, Inst.PROPS)
