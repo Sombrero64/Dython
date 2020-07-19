@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Python# 3.10.2 by Sombrero64</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Python# 3.10.2</h1>
+      <h2 class="project-tagline">Documentation</h2>
+      <a href="https://github.com/Sombrero64/PythonSharp" class="btn">View on GitHub</a>
+      <a href="https://github.com/Sombrero64/PythonSharp/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Sombrero64/PythonSharp/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><strong>Python# (Python Sharp)</strong> is a free open-source Python module created by Daniel Lawson that allows the braching, convenient creation of objects.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> <span class="pl-v">PythonSHARP</span> <span class="pl-k">import</span> <span class="pl-c1">*</span>
+
+<span class="pl-s1">playerInfoStuff</span> <span class="pl-c1">=</span> [
+    <span class="pl-v">Instance</span>(<span class="pl-s">'Health'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>]]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'Level'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">1</span>, <span class="pl-c1">0</span>]]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'XP'</span>, <span class="pl-s">'FloatStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>]]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'XP Max'</span>, <span class="pl-s">'FloatStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">10.0</span>, <span class="pl-c1">0.0</span>]]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'Health'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">100</span>, <span class="pl-c1">0</span>]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'Name'</span>, <span class="pl-s">'StringStore'</span>, [[<span class="pl-s">'Name'</span>, <span class="pl-s">''</span>, <span class="pl-s">''</span>]]),
+    <span class="pl-v">Instance</span>(<span class="pl-s">'Character'</span>, <span class="pl-s">'ObjectStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">None</span>, <span class="pl-c1">None</span>]])
+    ]
+
+<span class="pl-s1">objects</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'ObjectStorage'</span>, <span class="pl-s">'service'</span>, [])
+
+<span class="pl-s1">objects</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'PlayerInfo'</span>, <span class="pl-s">'folder'</span>, []))
+<span class="pl-s1">playerInfo</span> <span class="pl-c1">=</span> <span class="pl-s1">objects</span>.<span class="pl-en">findSpecificChild</span>(<span class="pl-s">'PlayerInfo'</span>, <span class="pl-s">'folder'</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">s</span> <span class="pl-c1">in</span> <span class="pl-en">list</span>(<span class="pl-s1">playerInfoStuff</span>): <span class="pl-s1">playerInfo</span>.<span class="pl-en">newChild</span>(<span class="pl-s1">s</span>)</pre></div>
+<h1>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h1>
+<ul>
+<li>
+<p><a href="#functions">Functions</a></p>
+</li>
+<li>
+<p><a href="#local-variables">Local Variables</a></p>
+</li>
+<li>
+<p><a href="#instances">Instances</a></p>
+<ul>
+<li>
+<p>Info Functions</p>
+</li>
+<li>
+<p>Children Functions</p>
+</li>
+<li>
+<p>Children Locator Functions</p>
+</li>
+<li>
+<p>Instance Variables</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>
+<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h2>
+<ul>
+<li>
+<p><code>itemsAddty()</code>: returns the sum of all items in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">itemsAddty</span>([<span class="pl-c1">42</span>, <span class="pl-c1">5</span>, <span class="pl-c1">-</span><span class="pl-c1">2</span>]))</pre></div>
+<pre><code>45.0
+</code></pre>
+</li>
+<li>
+<p><code>itemsSubty()</code>: returns the diffence of all items in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">itemsSubty</span>([<span class="pl-c1">100</span>, <span class="pl-c1">50</span>, <span class="pl-c1">25</span>, <span class="pl-c1">5</span>, <span class="pl-c1">-</span><span class="pl-c1">1</span>]))</pre></div>
+<pre><code>21.0
+</code></pre>
+</li>
+<li>
+<p><code>itemsMulty()</code>: returns the product of all items in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">itemsMulty</span>([<span class="pl-c1">25</span>, <span class="pl-c1">4</span>, <span class="pl-c1">4</span>]))</pre></div>
+<pre><code>400.0
+</code></pre>
+</li>
+<li>
+<p><code>itemsDidty()</code>: returns the quotient of all items in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">itemsDidty</span>([<span class="pl-c1">42</span>, <span class="pl-c1">7</span>, <span class="pl-c1">3</span>]))</pre></div>
+<pre><code>2.0
+</code></pre>
+</li>
+<li>
+<p><code>rangeLimit()</code>: sets a limit of the <em>first</em>'s range. If higher than the maximum (<em>secound</em>), it returns the <em>secound</em>'s value; and vice versa.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">rangeLimit</span>(<span class="pl-c1">1</span>, <span class="pl-c1">0</span>, <span class="pl-c1">10</span>))
+<span class="pl-en">print</span>(<span class="pl-en">rangeLimit</span>(<span class="pl-c1">5</span>, <span class="pl-c1">0</span>, <span class="pl-c1">10</span>))
+<span class="pl-en">print</span>(<span class="pl-en">rangeLimit</span>(<span class="pl-c1">12</span>, <span class="pl-c1">0</span>, <span class="pl-c1">10</span>))
+<span class="pl-en">print</span>(<span class="pl-en">rangeLimit</span>(<span class="pl-c1">-</span><span class="pl-c1">5</span>, <span class="pl-c1">0</span>, <span class="pl-c1">10</span>))
+<span class="pl-en">print</span>(<span class="pl-en">rangeLimit</span>(<span class="pl-c1">3</span>, <span class="pl-c1">0</span>, <span class="pl-c1">10</span>))</pre></div>
+<pre><code>1
+5
+10
+0
+3
+</code></pre>
+</li>
+<li>
+<p><code>feturn()</code>: returns either <em>secound</em> or <em>third</em> depending on the Boolean of <em>first</em>. If true, then <em>secound</em>. If false, then <em>third</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">feturn</span>(<span class="pl-c1">False</span>, <span class="pl-s">'Yes'</span>, <span class="pl-s">'No'</span>))
+<span class="pl-en">print</span>(<span class="pl-en">feturn</span>(<span class="pl-c1">True</span>, <span class="pl-s">'Yes'</span>, <span class="pl-s">'No'</span>))</pre></div>
+<pre><code>No
+Yes
+</code></pre>
+</li>
+<li>
+<p><code>listInit()</code>: returns a number regrading the first instance of an item in a list (<em>first</em>) that matches <em>secound</em>. Returns <em><strong>None</strong></em> if there was no items that matched <em>secound</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">listInit</span>([<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">1</span>], <span class="pl-c1">0</span>))
+<span class="pl-en">print</span>(<span class="pl-en">listInit</span>([<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">1</span>], <span class="pl-c1">2</span>))
+<span class="pl-en">print</span>(<span class="pl-en">listInit</span>([<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">1</span>], <span class="pl-c1">1</span>))</pre></div>
+<pre><code>0
+1
+2
+</code></pre>
+</li>
+<li>
+<p><code>listInits()</code>: returns a list of numbers regrading instances of items that matches <em>secound</em> in <em>first</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">numbers</span> <span class="pl-c1">=</span> [<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">0</span>, <span class="pl-c1">4</span>, <span class="pl-c1">4</span>, <span class="pl-c1">0</span>]
+
+<span class="pl-en">print</span>(<span class="pl-en">listInits</span>(<span class="pl-s1">numbers</span>, <span class="pl-c1">0</span>))
+<span class="pl-en">print</span>(<span class="pl-en">listInits</span>(<span class="pl-s1">numbers</span>, <span class="pl-c1">2</span>))
+<span class="pl-en">print</span>(<span class="pl-en">listInits</span>(<span class="pl-s1">numbers</span>, <span class="pl-c1">4</span>))</pre></div>
+<pre><code>[0, 2, 4, 6, 9]
+[3, 5]
+[7, 8]
+</code></pre>
+</li>
+<li>
+<p><code>filterList()</code>: returns a copy of list of <em>first</em> without items that matches <em>secound</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">numbers</span> <span class="pl-c1">=</span> [<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">0</span>, <span class="pl-c1">5</span>]
+<span class="pl-en">print</span>(<span class="pl-en">filterList</span>(<span class="pl-s1">numbers</span>, <span class="pl-c1">0</span>))</pre></div>
+<pre><code>[1, 2, 3, 4, 5]
+</code></pre>
+</li>
+<li>
+<p><code>findGreatest()</code>: returns the biggest item in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">findGreatest</span>([<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5.2</span>, <span class="pl-c1">5</span>]))</pre></div>
+<pre><code>5.2
+</code></pre>
+<p><code>findGreatestIndex()</code> return the biggest item's index.</p>
+</li>
+<li>
+<p><code>findSmallest()</code>: returns the smallest item in a list (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">findSmalest</span>([<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5.2</span>, <span class="pl-c1">5</span>]))</pre></div>
+<pre><code>0
+</code></pre>
+<p><code>findSmallestIndex()</code> return the biggest item's index.</p>
+</li>
+<li>
+<p><code>reverse()</code>: returns a positive number to a negivite one, and vice versa.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">reverse</span>(<span class="pl-c1">2</span>))
+<span class="pl-en">print</span>(<span class="pl-en">reverse</span>(<span class="pl-c1">-</span><span class="pl-c1">3</span>))
+<span class="pl-en">print</span>(<span class="pl-en">reverse</span>(<span class="pl-c1">4.2</span>))
+<span class="pl-en">print</span>(<span class="pl-en">reverse</span>(<span class="pl-c1">-</span><span class="pl-c1">6.9</span>))</pre></div>
+<pre><code>-2.0
+3.0
+-4.2
+6.9
+</code></pre>
+</li>
+<li>
+<p><code>genNumList()</code>: generates a list containing numbers from <em>first</em> to <em>secound</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">genNumList</span>(<span class="pl-c1">1</span>, <span class="pl-c1">10</span>))</pre></div>
+<pre><code>[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+</code></pre>
+</li>
+<li>
+<p><code>itemsInt()</code>, <code>itemsFloat()</code>, <code>itemsStr()</code>, <code>itemsList()</code>: converts all items in a list (<em>first</em>) to an integer, float, string, and list.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">itemsInt</span>([<span class="pl-c1">1.0</span>, <span class="pl-c1">2.0</span>, <span class="pl-c1">3.0</span>]))
+<span class="pl-en">print</span>(<span class="pl-en">itemsFloat</span>([<span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]))
+<span class="pl-en">print</span>(<span class="pl-en">itemsStr</span>([<span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>]))
+<span class="pl-en">print</span>(<span class="pl-en">itemsList</span>([<span class="pl-s">'first'</span>, <span class="pl-s">'secound'</span>, <span class="pl-s">'third'</span>]))</pre></div>
+<pre><code>[1, 2, 3]
+[4.0, 5.0, 6.0]
+['7', '8', '9']
+[['first'], ['secound'], ['third']]
+</code></pre>
+</li>
+<li>
+<p><code>truth()</code>: returns true, false, or <em><strong>None</strong></em> depending on <em>first</em>'s value. Returns <em>first</em> if it doesn't match any keywords.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-en">truth</span>(<span class="pl-s">'yes'</span>))
+<span class="pl-en">print</span>(<span class="pl-en">truth</span>(<span class="pl-s">'no'</span>))
+<span class="pl-en">print</span>(<span class="pl-en">truth</span>(<span class="pl-s">'nothing'</span>))
+<span class="pl-en">print</span>(<span class="pl-en">truth</span>(<span class="pl-s">'abc'</span>))</pre></div>
+<pre><code>True
+False
+None
+abc
+</code></pre>
+<h5>
+<a id="keywords" class="anchor" href="#keywords" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Keywords</h5>
+<ul>
+<li>True
+<ul>
+<li>true</li>
+<li>yes</li>
+<li>correct</li>
+<li>on</li>
+<li>1</li>
+</ul>
+</li>
+<li>False
+<ul>
+<li>false</li>
+<li>no</li>
+<li>incorrect</li>
+<li>off</li>
+<li>0</li>
+</ul>
+</li>
+<li>None
+<ul>
+<li>none</li>
+<li>nothing</li>
+<li>nil</li>
+<li>null</li>
+<li><em>empty string</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>menu()</code>: allows you to provide a mutlichoice input into a console for the user to pick from. Provide a list of options with a list (<em>secound</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">answer</span> <span class="pl-c1">=</span> <span class="pl-en">menu</span>(<span class="pl-c1">None</span>, [<span class="pl-s">'first'</span>, <span class="pl-s">'secound'</span>, <span class="pl-s">'third'</span>], <span class="pl-c1">False</span>)</pre></div>
+<pre><code>0: first
+1: secound
+2: third
+└&gt; 
+</code></pre>
+<p>If you want to provide a caption for your input, provide a string for <em>first</em>. Otherwise not, provide an empty string or <em><strong>None</strong></em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">answer</span> <span class="pl-c1">=</span> <span class="pl-en">menu</span>(<span class="pl-s">'anwser below'</span>, [<span class="pl-s">'first'</span>, <span class="pl-s">'secound'</span>, <span class="pl-s">'third'</span>], <span class="pl-c1">False</span>)</pre></div>
+<pre><code>anwser below
+0: first
+1: secound
+2: third
+└&gt; 
+</code></pre>
+<p>To allow an empty response, set <em>third</em> to true. If the user provided as such, it would return <em><strong>None</strong></em>.</p>
+</li>
+</ul>
+<h3>
+<a id="local-variables" class="anchor" href="#local-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Local Variables</h3>
+<p><strong>Local Variables</strong> allows you to make variables for temporary use. After their main use is over, they can be removed later on. These variables can also be renamed as well. Let's assign <code>Localment()</code> to <strong><code>teams</code></strong> to make it a home for variables regrading teams.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span> <span class="pl-c1">=</span> <span class="pl-v">Localment</span>()</pre></div>
+<ul>
+<li>
+<code>new()</code> &amp; <code>define()</code>: creates a local variable named after <em>first</em>. The <em><code>new()</code></em> function would set the value to <em><strong>None</strong></em>. The other one, <em><code>define()</code></em>, whould set it to <em>secound</em>.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'red'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'blue'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'yellow'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'green'</span>, <span class="pl-c1">0</span>)</pre></div>
+<ul>
+<li>
+<code>set()</code>: changes the value of a local variable (<em>first</em>) to <em>secound</em>.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span>.<span class="pl-en">set</span>(<span class="pl-s">'red'</span>, <span class="pl-c1">8</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">set</span>(<span class="pl-s">'blue'</span>, <span class="pl-c1">10</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">set</span>(<span class="pl-s">'yellow'</span>, <span class="pl-c1">2</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">set</span>(<span class="pl-s">'green'</span>, <span class="pl-c1">5</span>)</pre></div>
+<ul>
+<li>
+<code>change()</code>: increases the value of an variable (<em>first</em>) by <em>secound</em>. Using <code>bange()</code> world decrease it.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'red'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'blue'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'yellow'</span>, <span class="pl-c1">0</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">define</span>(<span class="pl-s">'green'</span>, <span class="pl-c1">0</span>)
+
+<span class="pl-s1">teams</span>.<span class="pl-en">change</span>(<span class="pl-s">'red'</span>, <span class="pl-c1">8</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">change</span>(<span class="pl-s">'blue'</span>, <span class="pl-c1">10</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">chnage</span>(<span class="pl-s">'yellow'</span>, <span class="pl-c1">-</span><span class="pl-c1">2</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">change</span>(<span class="pl-s">'green'</span>, <span class="pl-c1">5</span>)</pre></div>
+<ul>
+<li>
+<code>get()</code>: returns the value of a local variable (<em>first</em>). Returns <em><strong>None</strong></em> if variable doesn't exist.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'red'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'blue'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'yellow'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'green'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'purple'</span>))</pre></div>
+<pre><code>8
+10
+2
+5
+None
+</code></pre>
+<ul>
+<li>
+<code>find()</code>: returns the name of a variable in their housing variable based on index (<em>first</em>). Returns <em><strong>None</strong></em> if variable doesn't exist.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">find</span>(<span class="pl-c1">0</span>)) <span class="pl-c"># red</span>
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">find</span>(<span class="pl-c1">1</span>)) <span class="pl-c"># blue</span>
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">find</span>(<span class="pl-c1">2</span>)) <span class="pl-c"># yellow</span>
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">find</span>(<span class="pl-c1">3</span>)) <span class="pl-c"># green</span>
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">find</span>(<span class="pl-c1">4</span>)) <span class="pl-c"># purple (doesn't exist)</span></pre></div>
+<pre><code>red
+blue
+yellow
+green
+None
+</code></pre>
+<ul>
+<li>
+<code>rename()</code>: renames a local variable (<em>first</em>) to <em>secound</em>.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span>.<span class="pl-en">rename</span>(<span class="pl-s">'red'</span>, <span class="pl-s">'Red Team'</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">rename</span>(<span class="pl-s">'blue'</span>, <span class="pl-s">'Blue Team'</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">rename</span>(<span class="pl-s">'yellow'</span>, <span class="pl-s">'Yellow Team'</span>)
+<span class="pl-s1">teams</span>.<span class="pl-en">rename</span>(<span class="pl-s">'green'</span>, <span class="pl-s">'Green Team'</span>)</pre></div>
+<ul>
+<li>
+<code>remove()</code>: remove a local varaible (<em>first</em>).</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">teams</span>.<span class="pl-en">remove</span>(<span class="pl-s">'yellow'</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'red'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'blue'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'yellow'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">get</span>(<span class="pl-s">'green'</span>))</pre></div>
+<pre><code>8
+10
+None
+5
+</code></pre>
+<ul>
+<li>
+<code>variables()</code>: returns the list of all local variables in a variable.</li>
+</ul>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">teams</span>.<span class="pl-en">variables</span>())</pre></div>
+<pre><code>[['red', 8], ['blue', 10], ['green', 5]]
+</code></pre>
+<h3>
+<a id="instances" class="anchor" href="#instances" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instances</h3>
+<p><strong>Instances</strong> is a feature that allows you to create branching objects that contains names (subjects), classes, and properties (props for short). Using the <code>Instance()</code> function, you can create objects with this. Let's assign this to <strong><code>workspace</code></strong> to make a master object (service).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspaceProps</span> <span class="pl-c1">=</span> [[<span class="pl-s">'Project Name'</span>, <span class="pl-s">'Project'</span>, <span class="pl-s">'untitled'</span>]]
+<span class="pl-s1">workspace</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'Workspace'</span>, <span class="pl-s">'Workspace'</span>, <span class="pl-s1">workspaceProps</span>)</pre></div>
+<h4>
+<a id="info-functions" class="anchor" href="#info-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Info Functions</h4>
+<p>These functions would gather and modify infomation about an object; their subject, class, and props, and return them.</p>
+<ul>
+<li>
+<p><code>Sub()</code>, <code>Class()</code>, &amp; <code>Props()</code>: returns an object's subject, class, or props.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Class</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Props</span>())</pre></div>
+<pre><code>Workspace
+Workspace
+[['Project Name', 'Project', 'untitled']]
+</code></pre>
+</li>
+<li>
+<p><code>sitSub()</code>, <code>sitClass()</code>, &amp; <code>sitProps()</code>: sets an object's subject, class, or props to <em>first</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">sitSub</span>(<span class="pl-s">'Workspace?'</span>)
+<span class="pl-s1">workspace</span>.<span class="pl-en">sitClass</span>(<span class="pl-s">'workSpace'</span>)
+<span class="pl-s1">workspace</span>.<span class="pl-en">sitProps</span>([<span class="pl-s1">workspaceProps</span>[<span class="pl-c1">0</span>], [<span class="pl-s">'Oragnic?'</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>]])
+
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Class</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-v">Props</span>())</pre></div>
+<pre><code>Workspace?
+workSpace
+[['Project Name', 'Project', 'untitled'], ['Oragnic?', False, False]]
+</code></pre>
+</li>
+<li>
+<p><code>findProp()</code>: returns a list of a prop (<em>first</em>)'s infomation: name, current value, and default value.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findProp</span>(<span class="pl-s">'Project Name'</span>))</pre></div>
+<pre><code>['Project Name', 'Project', 'untitled']
+</code></pre>
+</li>
+<li>
+<p><code>gitProp()</code>: returns the current value of a prop (<em>first</em>).</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">gitProp</span>(<span class="pl-s">'Project Name'</span>))</pre></div>
+<pre><code>Project
+</code></pre>
+</li>
+<li>
+<p><code>sitProp()</code>: sets the value of a prop (<em>first</em>) to <em>secound</em>. Use <code>ritProp()</code> to set the prop to the default value.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">sitProp</span>(<span class="pl-s">'Project Name'</span>, <span class="pl-s">'Cool Game'</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">gitProp</span>(<span class="pl-s">'Project Name'</span>))</pre></div>
+<pre><code>Cool Game
+</code></pre>
+</li>
+<li>
+<p><code>parent()</code>: returns the object's parent as an object, allowing you to get its subject, class, props, and even children. You can also moddify them and manage their children.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'Some Object'</span>, <span class="pl-s">'object'</span>, []))
+<span class="pl-s1">someObject</span> <span class="pl-c1">=</span> <span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'Some Object'</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">someObject</span>.<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">someObject</span>.<span class="pl-en">parent</span>().<span class="pl-v">Sub</span>())</pre></div>
+<pre><code>Some Object
+Workspace
+</code></pre>
+<p>If necessary, you can use the <code>assignParentAs()</code> function to change an object's parent.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">someObject</span>.<span class="pl-en">assignParentAs</span>(<span class="pl-s1">objectStore</span>)</pre></div>
+</li>
+</ul>
+<h4>
+<a id="children-nested-objects-functions" class="anchor" href="#children-nested-objects-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Children (Nested Objects) Functions</h4>
+<ul>
+<li>
+<p><code>newChild()</code>: adds a new object inside an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>]]))</pre></div>
+<p>You can also make clones of the instance easily with the <code>clone()</code> function.</p>
+</li>
+<li>
+<p><code>clearChild()</code>: removes a child from an instance based on <em>first</em>'s object.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">child</span> <span class="pl-c1">=</span> <span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'Score'</span>)
+<span class="pl-s1">workspace</span>.<span class="pl-en">clearChild</span>(<span class="pl-s1">child</span>)</pre></div>
+<p>You can use <code>clear()</code> to remove the instance.</p>
+</li>
+<li>
+<p><code>clearChildren()</code>: removes children from an instance based on <em>first</em>'s object.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">clearChildren</span>()</pre></div>
+</li>
+<li>
+<p><code>clearAllChildren()</code>: removes all children from an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">clearAllChildren</span>()</pre></div>
+</li>
+<li>
+<p><code>replaceChild()</code>: replaces a child with a new object (<em>secound</em>) inside an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">child</span> <span class="pl-c1">=</span> <span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'Score'</span>)
+<span class="pl-s1">newObj</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'FloatStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>]])
+<span class="pl-s1">workspace</span>.<span class="pl-en">replaceChild</span>(<span class="pl-s1">child</span>, <span class="pl-s1">newObj</span>)</pre></div>
+</li>
+<li>
+<p><code>replaceChildren()</code>: replaces all matching children with a new object (<em>secound</em>) inside an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">replaceChildren</span>(<span class="pl-s1">children</span>, <span class="pl-s1">newObj</span>)</pre></div>
+</li>
+</ul>
+<h4>
+<a id="children-locator-functions" class="anchor" href="#children-locator-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Children Locator Functions</h4>
+<ul>
+<li>
+<p><code>getChildren()</code>: returns the list of all children from an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">getChildren</span>())</pre></div>
+</li>
+<li>
+<p><code>getChildbyIndex()</code>: returns a children based on index.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'Object1'</span>, <span class="pl-s">'object'</span>, []))
+<span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'Object2'</span>, <span class="pl-s">'object'</span>, []))
+<span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'Object3'</span>, <span class="pl-s">'object'</span>, []))
+
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">getChildbyIndex</span>(<span class="pl-c1">0</span>).<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">getChildbyIndex</span>(<span class="pl-c1">1</span>).<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">getChildbyIndex</span>(<span class="pl-c1">2</span>).<span class="pl-v">Sub</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">getChildbyIndex</span>(<span class="pl-c1">3</span>))</pre></div>
+<pre><code>Object1
+Object2
+Object3
+None
+</code></pre>
+</li>
+<li>
+<p><code>findChild()</code>: finds the first child named as such (<em>first</em>) from an instance. Returns <em><strong>None</strong></em> if no child exists named as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'Score'</span>).<span class="pl-v">Class</span>())</pre></div>
+<pre><code>IntStore
+</code></pre>
+</li>
+<li>
+<p><code>findFirstChild()</code>: finds the first child based on finding its class (<em>first</em>). Returns <em><strong>None</strong></em> if no child exists classified as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findFirstChild</span>(<span class="pl-s">'IntStore'</span>).<span class="pl-v">Sub</span>())</pre></div>
+<pre><code>Score
+</code></pre>
+</li>
+<li>
+<p><code>findSpecificChild()</code>: finds the first child named (<em>first</em>) and classified (<em>secound</em>) as such. Returns <em><strong>None</strong></em> if no child exists named/classified as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findSpecificChild</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntStore'</span>).<span class="pl-v">Sub</span>())</pre></div>
+<pre><code>Score
+</code></pre>
+</li>
+<li>
+<p><code>findFirstChildren()</code>: returns a list of objects that are classified (<em>first</em>) as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">findFirstChildren</span>(<span class="pl-s">'IntStore'</span>)</pre></div>
+</li>
+<li>
+<p><code>findRelatedChildren()</code>: returns a list of objects named as such (<em>first</em>) from an instance.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">findRelatedChildren</span>(<span class="pl-s">'Score'</span>)</pre></div>
+</li>
+<li>
+<p><code>locateRelatedChildren()</code>: returns a list of objects named (<em>first</em>) and classified (<em>secound</em>) as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">locateRelatedChildren</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntScore'</span>)</pre></div>
+</li>
+<li>
+<p><code>waitForChild()</code>: waits for a child (<em>first</em>) in an instance for their existence [subject]. Delays the script until found.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">waitForChild</span>(<span class="pl-s">'Score'</span>)</pre></div>
+</li>
+<li>
+<p><code>waitForFirstChild()</code>: waits for a child (<em>first</em>) in an instance for their existence [class]. Delays the script until found.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">waitForFirstChild</span>(<span class="pl-s">'IntStore'</span>)</pre></div>
+</li>
+<li>
+<p><code>waitForSpecificChild()</code>: waits for a child (<em>first</em> &amp; <em>secound</em>) in an instance for their existence [name &amp; class]. Delays the script until found.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">waitForSpecificChild</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntStore'</span>)</pre></div>
+</li>
+<li>
+<p><code>doesChildExist()</code>: returns a Boolean if it's true if the instance owns a child named as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesChildExist</span>(<span class="pl-s">'Score'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesChildExist</span>(<span class="pl-s">'HighScore'</span>))</pre></div>
+<pre><code>True
+False
+</code></pre>
+</li>
+<li>
+<p><code>doesFirstChildExist()</code>: returns a Boolean if it's true if the instance owns a child classified as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesFirstChildExits</span>(<span class="pl-s">'IntStore'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesFirstChildExits</span>(<span class="pl-s">'StringStore'</span>))</pre></div>
+<pre><code>True
+False
+</code></pre>
+</li>
+<li>
+<p><code>doesSpecificChildExist()</code>: returns a Boolean if it's true if the instance owns a child classified as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesFirstChildExits</span>(<span class="pl-s">'HighScore'</span>, <span class="pl-s">'IntStore'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesFirstChildExits</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntStore'</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">doesFirstChildExits</span>(<span class="pl-s">'Name'</span>, <span class="pl-s">'StringStore'</span>))</pre></div>
+<pre><code>False
+True
+False
+</code></pre>
+</li>
+<li>
+<p><code>findNamePairs()</code>: returns the first child in an instance that matches the name of another object. Returns <em><strong>None</strong></em> if no child exists named as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">altScore</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'NumberStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0.0</span>, <span class="pl-c1">0.0</span>]])
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findNamePairs</span>(<span class="pl-s1">altScore</span>).<span class="pl-v">Sub</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findNamePairs</span>(<span class="pl-s1">altScore</span>).<span class="pl-v">Class</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findNamePairs</span>(<span class="pl-s1">altScore</span>).<span class="pl-v">Props</span>())</pre></div>
+<pre><code>Score IntStore [['Value', 0, 0]]
+</code></pre>
+<p>Using <code>getNamePairs()</code> would return a list of children that matches the name of the object.</p>
+</li>
+<li>
+<p><code>findClassPairs()</code>: returns the first child in an instance that matches the class of another object. Returns <em><strong>None</strong></em> if no child exists classified as such.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">highScore</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'HighScore'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>]])
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findClassPairs</span>(<span class="pl-s1">highScore</span>).<span class="pl-v">Sub</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findClassPairs</span>(<span class="pl-s1">highScore</span>).<span class="pl-v">Class</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findClassPairs</span>(<span class="pl-s1">highScore</span>).<span class="pl-v">Props</span>())</pre></div>
+<pre><code>Score IntStore [['Value', 0, 0]]
+</code></pre>
+<p>Using <code>getClassPairs()</code> would return a list of children that matches the clas of the object.</p>
+</li>
+<li>
+<p><code>findPairs()</code>: returns the first child in an instance that matches both the name &amp; class of another object. Returns <em><strong>None</strong></em> if no matching child exists.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">outsider</span> <span class="pl-c1">=</span> <span class="pl-v">Instance</span>(<span class="pl-s">'Score'</span>, <span class="pl-s">'IntStore'</span>, [[<span class="pl-s">'Value'</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>]])
+<span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findPairs</span>(<span class="pl-s1">outsider</span>).<span class="pl-v">Sub</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findPairs</span>(<span class="pl-s1">outsider</span>).<span class="pl-v">Class</span>(),
+      <span class="pl-s1">workspace</span>.<span class="pl-en">findPairs</span>(<span class="pl-s1">outsider</span>).<span class="pl-v">Props</span>())</pre></div>
+<pre><code>Score IntStore [['Value', 0, 0]]
+</code></pre>
+<p>Using <code>getPairs()</code> would return a list of matching children.</p>
+</li>
+</ul>
+<h4>
+<a id="instance-variables" class="anchor" href="#instance-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instance Variables</h4>
+<p>Instance Variables are variables stored instance an object.</p>
+<ul>
+<li>
+<p><code>NEW()</code>: creates a new variable named as <em>first</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">newChild</span>(<span class="pl-v">Instance</span>(<span class="pl-s">'PlayerChar'</span>, <span class="pl-s">'humanoid'</span>, []))
+<span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'PlayerChar'</span>).<span class="pl-v">NEW</span>(<span class="pl-s">'direction'</span>, <span class="pl-c1">90</span>)</pre></div>
+</li>
+<li>
+<p><code>GET()</code>: returns the value of a variable. Returns <em><strong>None</strong></em> if the variable doesn't exist.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">print</span>(<span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'PlayerChar'</span>).<span class="pl-v">GET</span>(<span class="pl-s">'direction'</span>))</pre></div>
+<pre><code>90
+</code></pre>
+<p>The <code>INDEX()</code> function returns the name of a variable based on index.</p>
+</li>
+<li>
+<p><code>SET()</code>: sets the value of a variable.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'PlayerChar'</span>).<span class="pl-v">SET</span>(<span class="pl-s">'direction'</span>, <span class="pl-c1">180</span>)</pre></div>
+</li>
+<li>
+<p><code>DEL()</code>: removes a variable.</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-s1">workspace</span>.<span class="pl-en">findChild</span>(<span class="pl-s">'PlayerChar'</span>).<span class="pl-v">DEL</span>(<span class="pl-s">'direction'</span>)</pre></div>
+</li>
+</ul>
+<p><strong>Copyright (©) 2020 Daniel Lawson</strong></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Sombrero64/PythonSharp">Python# 3.10.2</a> is maintained by <a href="https://github.com/Sombrero64">Sombrero64</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
