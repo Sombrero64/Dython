@@ -1,42 +1,43 @@
-# PYTHON #
-# Version 3.10.2
+"""
+===========================
+████ █ █ ███ █ █ ███ █  █ #
+█  █  █   █  █ █ █ █ ██ █
+████  █   █  ███ █ █ █ ██
+█    █    █  █ █ █ █ █  █
+█   █     █  █ █ ███ █  █
+===========================
+
+Python# is an open source module that allows the branching, convenient creation of objects.
+It also had storable variables and useful functions to use.
+
+Created by Daniel; copyright (©) 2020 Daniel Lawson.
+github.com/Sombrero64
+
+Python# uses the MIT license (mit).
+
+CREDITS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+18001767679
+Dan's Papa (Grandfather)
+"""
+def info(): print(__doc__)
+
+# PYTHON#
+# Version 3.11.2
 
 # Contrants
-menuFunctionLow = "must be at least 2 items"
-menuFunctionGenral = "function 'menu()' error"
-waitForChildDelay = "possible infinite wait for child"
-newChildNil = "new instance isn't required object"
-LOCALchangeType = "local varible must match the changer's type"
-itemsAddtyNon = "try using the itemsMerge() function instead of itemsAddty()"
-itemsAddtyGenral = "function 'itemsAddty()' error"
-itemsSubtyNon = "try using the itemsDerge() function instead of itemsSubty()"
-itemsSubtyGenral = "function 'itemsSubty()' error"
-cloneMaster = "cannot clone a master instance"
-
-# Guide
-def info():
-    print('████ █ █ ███ █ █ ███ █  █ #')
-    print('█  █  █   █  █ █ █ █ ██ █')
-    print('████  █   █  ███ █ █ █ ██')
-    print('█    █    █  █ █ █ █ █  █')
-    print('█   █     █  █ █ ███ █  █')
-    print('''Version 3.9.2''')
-    print('')
-    print('''Python# (PythonSharp) is a free open source module for Python 3.8.3.''')
-    print('''Python# allows the branching, convenient creation of objects with propterties.''')
-    print('''It also have local variables (stores clearable varaibles) and useful functions.''')
-    print('')
-    print('''Created by Daniel; copyright (©) 2020 Daniel Lawson.''')
-    print('github.com/Sombrero64')
-    print('sites.google.com/view/unclejimbo')
-    print('')
-    print('''Python# uses the MIT license (mit).''')
-    print('')
-    print('CREDITS')
-    print('▔▔▔▔▔▔▔▔▔')
-    print('18001767679')
-    print("Dan's Papa (Grandfather)")
-    
+Errors = [
+    "must be at least 2 items" #menuFunctionLow
+    "function 'menu()' error" #menuFunctionGenral
+    "possible infinite wait for child" #waitForChildDelay
+    "new instance isn't required object" #newChildNil
+    "local varible must match the changer's type" #LOCALchangeType
+    "try using the itemsMerge() function instead of itemsAddty()" #itemsAddtyNon
+    "function 'itemsAddty()' error" #itemsAddtyGenral
+    "try using the itemsDerge() function instead of itemsSubty()" #itemsSubtyNon
+    "function 'itemsSubty()' error" #itemsSubtyGenral
+    "cannot clone a master instance" #cloneMaster
+    ]
 
 # Oprations
 def itemsAddty(var):
@@ -45,9 +46,9 @@ def itemsAddty(var):
         for i in list(var): num += float(i)
         return float(num)
     except ValueError:
-        raise ValueError(itemsAddtyNon)
+        raise ValueError(Errors[2])
     except:
-        raise RuntimeError(itemsAddtyGenral)
+        raise RuntimeError(Errors[2])
 
 def itemsMerge(var):
     value = ''
@@ -60,9 +61,9 @@ def itemsSubty(var):
         for i in list(var): num -= float(i)
         return float(num)
     except ValueError:
-        raise ValueError(itemsSubtyNon)
+        raise ValueError(Errors[2])
     except:
-        raise RuntimeError(itemsSubtyGenral)
+        raise RuntimeError(Errors[2])
 
 def itemsMulty(var):
     num = 1
@@ -79,15 +80,9 @@ def itemsDidty(var):
             else: num /= float(i)
         else: passer = True
     return num
-
-def itemCount(var, item):
-    count = 0
-    for i in list(var):
-        if i == item: count += 1
-    return int(count)
     
-def rangeLimit(num, Min, Max):
-    NUM = float(num); MIN = float(Min); MAX = float(Max)
+def rangeLimit(num, nin, nax):
+    NUM, MIN, MAX = float(num), float(nim), float(nax)
     if NUM > MAX: return MAX
     elif NUM < MIN: return MIN
     else: return NUM
@@ -95,12 +90,7 @@ def rangeLimit(num, Min, Max):
 def feturn(con, true, false):
     return true if bool(con) else false
     
-def listInit(var, item):
-    for j in range(len(list(var))):
-        if list(var)[j] == item: return int(j)
-    return None
-    
-def listInits(var, item):
+def listPairs(var, item):
     items = []
     for j in range(len(list(var))):
         if list(var)[j] == item: items.append(j)
@@ -113,17 +103,6 @@ def filterList(var, item):
         if j != item: items.append(j)
     return list(items)
 
-def indexList(var, indexes):
-    items = []
-    for IN in list(indexes): items.append(list(var)[int(IN)])
-    return list(items)
-
-def findGreatest(var):
-    number = float(list(var)[0])
-    for i in list(var):
-        if float(i) > number: number = i
-    return number
-
 def findGreatestIndex(var):
     number = float(list(var)[0])
     index = 0
@@ -132,12 +111,6 @@ def findGreatestIndex(var):
             number = var[i]
             index = i
     return index
-
-def findSmallest(var):
-    number = float(list(var)[0])
-    for i in list(var):
-        if float(i) < number: number = i
-    return number
 
 def findSmallestIndex(var):
     number = float(list(var)[0])
@@ -189,9 +162,35 @@ def truth(value):
         if str(value) == s: return None
     return str(value)
 
+def xor(bool1, bool2): return bool(bool1) != bool(bool2)
+
+def orItems(value):
+    for b in list(value):
+        if bool(b): return True
+    return False
+
+def andItems(value):
+    for b in list(value):
+        if not bool(b): return False
+    return True
+
+def xorItems(value):
+    testBoolean = False
+    for b in list(value):
+        if bool(b):
+            if testBoolean: return False
+            else: testBoolean = True
+    return testBoolean
+
+def truthBalance(value, nim, nax):
+    count = 0
+    for b in list(value):
+        if bool(b): count += 1
+    return count >= int(nim) and count <= nax
+
 def menu(options, noAnwser):
     if int(len(options)) == 0 or (int(len(options)) == 1 and not bool(noAnwser)):
-        raise ValueError(menuFunctionLow)
+        raise ValueError(Errors[0])
     for optionCount in range(len(options)): print(str(optionCount) + ": " + str(options[optionCount]))
     while True:
         optionAnwser = input("└> ")
@@ -201,7 +200,7 @@ def menu(options, noAnwser):
             except ValueError:
                 try: testAnwser = str(optionAnwser); mest = "str"
                 except:
-                    raise RuntimeError(menuFunctionGenral)
+                    raise RuntimeError(Errors[1])
         if mest == "int" or mest == "float":
             if mest == "float": testAnwser = int(round(float(testAnwser)))
             optionAnswer = testAnwser
@@ -235,14 +234,14 @@ class Localment():
             try:
                 if str(list(i)[0]) == str(Name): i[1] += Change
             except TypeError:
-                raise TypeError(LOCALchangeType)
+                raise TypeError(Errors[2])
 
     def bange(self, Name, Change):
         for i in list(self.CONTENT):
             try:
                 if str(list(i)[0]) == str(Name): i[1] -= Change
             except TypeError:
-                raise TypeError(LOCALchangeType)
+                raise TypeError(Errors[2])
 
     def rename(self, Name, New):
         for i in list(self.CONTENT):
@@ -343,7 +342,7 @@ class Instance():
     # Objects
     def newChild(self, Instance):
         if Instance == None:
-            raise ValueError(newChildNil)
+            raise ValueError(Errors[2])
         else:
             Instance.PARENT = self; self.CHILDS.append(Instance)
 
@@ -356,7 +355,7 @@ class Instance():
     def clone(self):
         if self.PARENT != None: self.PARENT.CHILDS.append(self)
         else:
-            raise AttributeError(cloneMaster)
+            raise AttributeError(Errors[2])
 
     def clearChild(self, Child):
         for oj in range(int(len(list(self.CHILDS)))):
@@ -428,7 +427,7 @@ class Instance():
                 if dump(o)[0] == str(ChildName): return o
             delay += 1
             if delay >= 1500:
-                raise RuntimeError(waitForChildDelay)      
+                raise RuntimeError(Errors[2])      
 
     def waitForFirstChild(self, ChildClass):
         delay = 0
@@ -437,7 +436,7 @@ class Instance():
                 if dump(o)[1] == str(ChildClass): return o
             delay += 1
             if delay >= 1500:
-                raise RuntimeError(waitForFirstChildDelay)
+                raise RuntimeError(Errors[2])
 
     def waitForSpecificChild(self, ChildName, ChildClass):
         delay = 0
@@ -446,7 +445,7 @@ class Instance():
                 if dump(o)[0] == str(ChildName) and dump(o)[1] == str(ChildClass): return o
             delay += 1
             if delay >= 1500:
-                raise RuntimeError(waitForSpecificChildDelay)
+                raise RuntimeError(Errors[2])
 
     # > Does Child Exists?
     def doesChildExist(self, ChildName):
