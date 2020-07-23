@@ -145,13 +145,19 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
 - `findGreatestIndex()`: returns the biggest item's index in a list (_first_).
     
     ```py
-    findGreatestIndex([0, 2, 4, 1, 3, 5.2, 5])
+    print(findGreatestIndex([0, 2, 4, 1, 3, 5.2, 5]))
+    ```
+    ```
+    5
     ```
     
  - `findSmallestIndex()`: returns the smallest item's index in a list (_first_).
     
     ```py
-    findSmallestIndex([0, 2, 4, 1, 3, 5.2, 5])
+    print(findSmallestIndex([0, 2, 4, 1, 3, 5.2, 5]))
+    ```
+    ```
+    0
     ```
     
 - `reverse()`: returns a positive number to a negivite one, and vice versa.
@@ -207,27 +213,7 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
     None
     abc
     ```
-    
-    ##### Keywords
-    - True
-        - true
-        - yes
-        - correct
-        - on
-        - 1
-    - False
-        - false
-        - no
-        - incorrect
-        - off
-        - 0
-    - None
-        - none
-        - nothing
-        - nil
-        - null
-        - _empty string_
-        
+
 - `orItems()`, `andItems()`, `xorItems()`: profroms an `or`, `and`, & `^` (xor) opration on the items in a list (_first_) and returns the Boolean based on the caluation.
 
     ```py
