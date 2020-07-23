@@ -412,12 +412,12 @@ class Instance():
             raise AttributeError(Errors[2])
 
     def clearChild(self, Child):
-        for oj in range(len(list(self.CHILDS)))):
+        for oj in range(len(list(self.CHILDS))):
             if self.CHILDS[oj] == Child:
                 self.CHILDS.pop(oj); break
     
     def clearChildren(self, Children):
-        for oj in range(len(list(self.CHILDS)))):
+        for oj in range(len(list(self.CHILDS))):
             if self.CHILDS[oj] == Children: self.CHILDS.pop(oj)
 
     def clearAllChildren(self): self.CHILDS = []
@@ -451,7 +451,7 @@ class Instance():
 
     def findSpecificChild(self, ChildName, ChildClass):
         for o in list(self.CHILDS):
-            if dump(o)[0] == ChildName) and dump(o)[1] == ChildClass: return o
+            if dump(o)[0] == ChildName and dump(o)[1] == ChildClass: return o
         return None
 
     # > Find Children
