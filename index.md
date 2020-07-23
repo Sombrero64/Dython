@@ -142,27 +142,17 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
     [1, 2, 3, 4, 5]
     ```
 
-- `findGreatest()`: returns the biggest item in a list (_first_).
+- `findGreatestIndex()`: returns the biggest item's index in a list (_first_).
     
     ```py
-    print(findGreatest([0, 2, 4, 1, 3, 5.2, 5]))
-    ```
-    ```
-    5.2
+    findGreatestIndex([0, 2, 4, 1, 3, 5.2, 5])
     ```
     
-    `findGreatestIndex()` return the biggest item's index.
-    
- - `findSmallest()`: returns the smallest item in a list (_first_).
+ - `findSmallestIndex()`: returns the smallest item's index in a list (_first_).
     
     ```py
-    print(findSmalest([0, 2, 4, 1, 3, 5.2, 5]))
+    findSmallestIndex([0, 2, 4, 1, 3, 5.2, 5])
     ```
-    ```
-    0
-    ```
-    
-    `findSmallestIndex()` return the biggest item's index.
     
 - `reverse()`: returns a positive number to a negivite one, and vice versa.
 
@@ -237,11 +227,96 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
         - nil
         - null
         - _empty string_
+        
+- `orItems()`, `andItems()`, `xorItems()`: profroms an `or`, `and`, & `^` (xor) opration on the items in a list (_first_) and returns the Boolean based on the caluation.
 
-- `menu()`: allows you to provide a mutlichoice input into a console for the user to pick from. Provide a list of options with a list (_secound_).
+    ```py
+    print(orItems([True, False]))
+    print(orItems([True, True]))
+    print(orItems([False, False]))
+    print('')
+
+    print(andItems([True, False]))
+    print(andItems([True, True]))
+    print(andItems([False, False]))
+    print('')
+
+    print(xorItems([True, False]))
+    print(xorItems([True, True]))
+    print(xorItems([False, False]))
+    ```
+    ```
+    True
+    True
+    False
+
+    False
+    True
+    False
+
+    True
+    False
+    False
+    ```
+    
+- `truthBalance()`: profroms an boolean gate opration on the items in a list (_first_). It's true if the ammount of true items are around _secound_ to _third_.
+
+    ```py
+    # returns true if 0 - 1 are true
+    print(truthBalance([True, True, True], 0, 1))
+    print(truthBalance([True, False, True], 0, 1))
+    print(truthBalance([True, False, False], 0, 1))
+    print(truthBalance([False, False, False], 0, 1))
+    ```
+    ```
+    False
+    False
+    True
+    True
+    ```
+    
+- `factors()`: returns the factors of the integer provided.
+
+    ```py
+    print(factors(12))
+    print(factors(16))
+    ```
+    ```
+    [1, 2, 3, 4, 6, 12]
+    [1, 2, 4, 8, 16]
+    ```
+    
+- `commonFactor()`: returns the greatest common factor (gcf) of _first_ and _secound_.
+
+    ```py
+    print(commonFactor(18, 27))
+    ```
+    ```
+    9
+    ```
+
+- `multiples()`: returns the multiples of _first_ limited by the maximum (_secound_).
+
+    ```py
+    print(multiples(3, 11))
+    ```
+    ```
+    [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
+    ```
+
+- `commonMultiple()`: returns the lowest common multiple (lcm) of _first_ and _secound_ limited by the maximum (_third_). Returns ***None*** if no common multiples where found.
+
+    ```py
+    print(commonMultiple(3, 4, 10))
+    ```
+    ```
+    12
+    ```
+
+- `menu()`: allows you to provide a mutlichoice input into a console for the user to pick from. Provide a list of options with a list (_first_).
   
     ```py
-    answer = menu(None, ['first', 'secound', 'third'], False)
+    answer = menu(['first', 'secound', 'third'], False)
     ```
     ```
     0: first
@@ -249,21 +324,8 @@ for s in list(playerInfoStuff): playerInfo.newChild(s)
     2: third
     └> 
     ```
-  
-    If you want to provide a caption for your input, provide a string for _first_. Otherwise not, provide an empty string or ***None***.
-  
-    ```py
-    answer = menu('anwser below', ['first', 'secound', 'third'], False)
-    ```
-    ```
-    anwser below
-    0: first
-    1: secound
-    2: third
-    └> 
-    ```
-  
-    To allow an empty response, set _third_ to true. If the user provided as such, it would return ***None***.
+
+    To allow an empty response, set _secound_ to true. If the user provided as such, it would return ***None***.
 
 ### Local Variables
 **Local Variables** allows you to make variables for temporary use. After their main use is over, they can be removed later on. These variables can also be renamed as well. Let's assign `Localment()` to **`teams`** to make it a home for variables regrading teams.
@@ -375,7 +437,7 @@ teams = Localment()
   ```
 
 ### Instances
-**Instances** is a feature that allows you to create branching objects that contains names (subjects), classes, and properties (props for short). Using the `Instance()` function, you can create objects with this. Let's assign this to **`workspace`** to make a master object (service).
+**Instances** is a feature that allows you to create branching objects that contains names (subjects), classes, and properties (props for short, `[name, value, default]`). Using the `Instance()` function, you can create objects with this. Let's assign this to **`workspace`** to make a master object (service).
 
 ```py
 workspaceProps = [['Project Name', 'Project', 'untitled']]
