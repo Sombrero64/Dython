@@ -239,7 +239,7 @@ def menu(options, noAnwser):
         if mest == 'num':
             optionAnswer = int(round(float(testAnwser)))
             if optionAnswer >= 0 and optionAnswer < len(options): return optionAnswer
-        elif mest == "'str':
+        elif mest == 'str':
             if bool(noAnwser) and optionAnwser == '': return None
         
 # Local Variables
