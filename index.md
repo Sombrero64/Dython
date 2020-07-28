@@ -1,5 +1,5 @@
 # Documentation
-__Python# (Python Sharp)__ is a free open-source Python module created by Daniel Lawson that allows the braching, convenient creation of objects.
+__Python# (Python Sharp)__ is a free open-source Python module created by Daniel Lawson that allows the branching, convenient creation of objects.
 
 ```py
 from PythonSHARP import *
