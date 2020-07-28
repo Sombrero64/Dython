@@ -1,0 +1,1 @@
+The `limit()` function takes a number and returns it with a maximum and minimum. If the number is greater than its maximum, then it returns the max instend. Same thing goes with the minimum if the number is smaller.
