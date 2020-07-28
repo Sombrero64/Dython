@@ -1,5 +1,5 @@
 # Python#
-__Python#__ is a free open-source Python module that allows the braching, convenient creation of objects.
+__Python#__ is a free open-source Python module that allows the branching, convenient creation of objects.
 
 ```py
 from PythonSHARP import *
