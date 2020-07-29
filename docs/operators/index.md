@@ -4,7 +4,7 @@ An operator is a function that takes at least one argument and returns something
 - [`limit()`](https://sombrero64.github.io/PythonSharp/docs/operators/Limit)
 - [`pairs()`](https://sombrero64.github.io/PythonSharp/docs/operators/Pairs)
 - [`filterList()`](https://sombrero64.github.io/PythonSharp/docs/operators/Filter)
-- `itemIndex()`
+- [`itemIndex()`](https://sombrero64.github.io/PythonSharp/docs/operators/itemIndex)
 - `greatestIndex()` & `smallestIndex()`
 - `reverse()`
 - `genNumList()`
