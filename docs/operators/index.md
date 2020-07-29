@@ -2,7 +2,7 @@ An operator is a function that takes at least one argument and returns something
 
 - [`addty()`, `join()`, `subty()`, `multy()` & `didty()`](https://sombrero64.github.io/PythonSharp/docs/operators/BasicItemCaluations)
 - [`limit()`](https://sombrero64.github.io/PythonSharp/docs/operators/Limit)
-- `pairs()`
+- [`pairs()`](https://sombrero64.github.io/PythonSharp/docs/operators/Pairs)
 - `filter()`
 - `itemIndex()`
 - `greatestIndex()` & `smallestIndex()`
