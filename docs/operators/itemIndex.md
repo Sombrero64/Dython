@@ -1,4 +1,4 @@
-The `itemIndex()` function returns a list of items of ___1___ picked out with a list of indexs. For example, we can create string `FEED BABBA`.
+The `itemIndex()` function returns a list of items of ___1___ picked out with a list of indexs. 
 
 ```py
 keys = [' ', 'A', 'B', 'C', 'D', 'E', 'F']
