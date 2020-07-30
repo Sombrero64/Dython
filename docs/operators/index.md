@@ -11,8 +11,8 @@ An operator is a function that takes at least one argument and returns something
 - [`truth()`](https://sombrero64.github.io/PythonSharp/docs/operators/Truth)
 - [`orItems()`, `andItems()` & `xorItems()`](https://sombrero64.github.io/PythonSharp/docs/operators/itemsBoolean)
 - [`balance()`](https://sombrero64.github.io/PythonSharp/docs/operators/balance)
-- `factors()`
-- `commonFactor()`
+- [`factors()`](https://sombrero64.github.io/PythonSharp/docs/operators/factors)
+- [`commonFactor()`](https://sombrero64.github.io/PythonSharp/docs/operators/commonFactor)
 - `multiples()`
 - `commonMultiple()`
 - `sortBig()` & `sortSmall()`
