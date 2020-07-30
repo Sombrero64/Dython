@@ -6,7 +6,7 @@ An operator is a function that takes at least one argument and returns something
 - [`filterList()`](https://sombrero64.github.io/PythonSharp/docs/operators/Filter)
 - [`itemIndex()`](https://sombrero64.github.io/PythonSharp/docs/operators/itemIndex)
 - [`reverse()`](https://sombrero64.github.io/PythonSharp/docs/operators/reverse)
-- `genNumList()`
+- [`genNumList()`](https://sombrero64.github.io/PythonSharp/docs/operators/genNumList)
 - `itemsInt()`, `itemsFloat()`, `itemsStr()`, `itemsList()` & `shutItems()`
 - `truth()`
 - `orItems()`, `andItems()` & `xorItems()`
