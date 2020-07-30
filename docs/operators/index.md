@@ -16,4 +16,5 @@ An operator is a function that takes at least one argument and returns something
 - `multiples()`
 - `commonMultiple()`
 - `sortBig()` & `sortSmall()`
+- `flip()`
 - `menu()`
