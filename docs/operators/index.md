@@ -10,7 +10,7 @@ An operator is a function that takes at least one argument and returns something
 - [`itemsInt()`, `itemsFloat()`, `itemsStr()`, `itemsList()` & `shutItems()`](https://sombrero64.github.io/PythonSharp/docs/operators/itemsConvert)
 - [`truth()`](https://sombrero64.github.io/PythonSharp/docs/operators/Truth)
 - [`orItems()`, `andItems()` & `xorItems()`](https://sombrero64.github.io/PythonSharp/docs/operators/itemsBoolean)
-- `balance()`
+- [`balance()`](https://sombrero64.github.io/PythonSharp/docs/operators/balance)
 - `factors()`
 - `commonFactor()`
 - `multiples()`
