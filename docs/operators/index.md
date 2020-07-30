@@ -13,8 +13,8 @@ An operator is a function that takes at least one argument and returns something
 - [`balance()`](https://sombrero64.github.io/PythonSharp/docs/operators/balance)
 - [`factors()`](https://sombrero64.github.io/PythonSharp/docs/operators/factors)
 - [`commonFactor()`](https://sombrero64.github.io/PythonSharp/docs/operators/commonFactor)
-- `multiples()`
-- `commonMultiple()`
-- `sortBig()` & `sortSmall()`
-- `flip()`
+- [`multiples()`](https://sombrero64.github.io/PythonSharp/docs/operators/multiples)
+- [`commonMultiple()`](https://sombrero64.github.io/PythonSharp/docs/operators/commonMultiple)
+- [`sort()`](https://sombrero64.github.io/PythonSharp/docs/operators/sort)
+- [`flip()`](https://sombrero64.github.io/PythonSharp/docs/operators/flip)
 - `menu()`
