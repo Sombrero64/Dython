@@ -21,3 +21,5 @@ playerInfo = objects.findSpecificChild('PlayerInfo', 'folder')
 
 for s in list(playerInfoStuff): playerInfo.newChild(s)
 ```
+
+[View all Operators](https://sombrero64.github.io/PythonSharp/docs/operators)
