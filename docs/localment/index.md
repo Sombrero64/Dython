@@ -16,7 +16,7 @@ scores.change('Green', 2)
 scores.change('Yellow', 1)
 ```
 
-- `new()` & `define()`
+- `define()`
 - `set()` & `change()`
 - `rename()`
 - `get()`
