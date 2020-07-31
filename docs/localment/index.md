@@ -16,10 +16,10 @@ scores.change('Green', 2)
 scores.change('Yellow', 1)
 ```
 
-- `define()`
-- `set()` & `change()`
-- `rename()`
-- `get()`
-- `find()`
-- `remove()` & `wipe()`
-- `all()`
+- [`define()`](https://sombrero64.github.io/PythonSharp/docs/localment/create)
+- [`set()` & `change()`](https://sombrero64.github.io/PythonSharp/docs/localment/change)
+- [`rename()`](https://sombrero64.github.io/PythonSharp/docs/localment/rename)
+- [`get()`](https://sombrero64.github.io/PythonSharp/docs/localment/get)
+- [`find()`](https://sombrero64.github.io/PythonSharp/docs/localment/find)
+- [`remove()` & `wipe()`](https://sombrero64.github.io/PythonSharp/docs/localment/remove)
+- [`all()`](https://sombrero64.github.io/PythonSharp/docs/localment/all)
