@@ -1,4 +1,4 @@
-An operator is a function that takes at least one argument and returns something. In the current version, Version 3.16.4, there are over 30 operators.
+An operator is a function that takes at least one argument and returns something.
 
 - [`addty()`, `join()`, `subty()`, `multy()` & `didty()`](https://sombrero64.github.io/PythonSharp/docs/operators/BasicItemCaluations)
 - [`limit()`](https://sombrero64.github.io/PythonSharp/docs/operators/Limit)
@@ -17,4 +17,3 @@ An operator is a function that takes at least one argument and returns something
 - [`commonMultiple()`](https://sombrero64.github.io/PythonSharp/docs/operators/commonMultiple)
 - [`sort()`](https://sombrero64.github.io/PythonSharp/docs/operators/sort)
 - [`flip()`](https://sombrero64.github.io/PythonSharp/docs/operators/flip)
-- `menu()`
