@@ -1,4 +1,4 @@
-The `get()` function returns the value of a variable (___1___).
+The `get()` function returns the value of a variable (___1___). Returns **none** if no such variable exist.
 
 ```py
 print('the integer is', variables.get('int'))
