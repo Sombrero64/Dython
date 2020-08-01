@@ -9,7 +9,7 @@ playerInfoStuff = [
     Instance('Level', 'IntStore', [['Value', 1, 0]]),
     Instance('XP', 'FloatStore', [['Value', 0.0, 0.0]]),
     Instance('XP Max', 'FloatStore', [['Value', 10.0, 0.0]]),
-    Instance('Health', 'IntStore', [['Value', 100, 0]),
+    Instance('Health', 'IntStore', [['Value', 100, 0]]),
     Instance('Name', 'StringStore', [['Name', '', '']]),
     Instance('Character', 'ObjectStore', [['Value', None, None]])
     ]
@@ -19,7 +19,7 @@ objects = Instance('ObjectStorage', 'service', [])
 objects.newChild(Instance('PlayerInfo', 'folder', []))
 playerInfo = objects.findSpecificChild('PlayerInfo', 'folder')
 
-for s in list(playerInfoStuff): playerInfo.newChild(s)
+for s in playerInfoStuff: playerInfo.newChild(s)
 ```
 
 [View all Operators](https://sombrero64.github.io/PythonSharp/docs/operators)
