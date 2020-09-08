@@ -63,7 +63,7 @@ def join(var):
     string = ''
     for i in var: string += str(i)
     return string
-
+'''
 def subty(var):
     """
     returns the difference of all items in {var}
@@ -71,7 +71,7 @@ def subty(var):
     num = var[0] * 2.0
     for i in var: num -= i
     return num
-
+'''
 def multy(var):
     """
     returns the product of all items in {var}
@@ -79,7 +79,7 @@ def multy(var):
     num = 1.0
     for i in var: num *= i
     return num
-
+'''
 def didty(var):
     """
     returns the quotient of all items in {var}
@@ -91,8 +91,9 @@ def didty(var):
             else: num /= i
         else: passer = True
     return num
-    
-def limit(num, nin, nax):
+'''
+#You should only do that to a function obeying the accosiative principle
+def constrain(num, nin, nax):
     """
     returns {num} with a range limit
 
@@ -103,7 +104,7 @@ def limit(num, nin, nax):
     elif num < nin: return nin
     else: return num
     
-def pairs(var, item):
+def count(var, item):
     """
     returns a list of indexes of {var}'s items that equals to {item}
     """
@@ -121,31 +122,32 @@ def filterList(var, item):
         if j != item: items.append(j)
     return items
 
-def itemIndex(var, indexs):
+def indexes(var, indexs):
     """
     returns items from {var} based of a list of indexes from {indexs}
     """
     items = []
     for i in indexs: items.append(var[i])
     return items
-
+'''
 def reverse(value):
     """
     returns {value} from positive to negivite, & vice versa
     """
-    return value - value * 2
-
+    return -value
+#useless as you can just use - operator
 def genNumList(nin, nax):
     """
     returns a list of integers from {nin} to {nax}
     """
     C, List = nin, []
-    while True:
-        if not C > nax: List.append(C)
-        else: break
+    while C > nax:
+        List.append(C)
         C += 1
     return List
-
+'''
+#useless as it is like range()
+'''
 def itemsInt(value):
     """
     returns {value}'s items converted into a integer
@@ -185,7 +187,11 @@ def boolList(value):
     newList = []
     for i in value: newList.append(bool(i))
     return newList
-
+'''
+#use the following function instead:
+def convHyper(value,type):
+    return map(lambda x:type(x),value)
+'''
 def shutItems(value):
     """
     returns {value}'s items placed into an empty list
@@ -193,7 +199,7 @@ def shutItems(value):
     newList = []
     for i in value: newList.append([i])
     return newList
-
+#same as list.copy()
 def orItems(value):
     """
     prefroms an or opration on all {value}'s items
@@ -209,7 +215,8 @@ def andItems(value):
     for b in value:
         if not b: return False
     return True
-
+#same as all,any
+'''
 def xorItems(value):
     """
     prefroms an ^ (xor) opration on all {value}'s items
@@ -296,7 +303,7 @@ def contains(var, item):
     for i in var:
         if i == item: return True
     return False
-
+'''
 def sort(var):
     """
     returns {var} being sorted from smallest to greatest
@@ -306,7 +313,7 @@ def sort(var):
         sort.append(min(var))
         numbers.pop(numbers.index(min(var)))
     return sort
-
+#same as sorted
 def flip(var):
     """
     returns {var}'s order of all of its items reversed
@@ -314,9 +321,10 @@ def flip(var):
     new, length = [], len(var)
     for i in range(length): new.append(var[length - (i + 1)])
     return new
-
+#same as reversed
+'''
 # Inputs
-
+'''
 def intInput(caption):
     """
     returns the integer the user provided
@@ -342,17 +350,26 @@ def floatInput(caption):
             final = 'int'
         except: pass
         if final == 'int': return test
-
+'''
+#use the following function instead:
+def typedTnput(typ,caption):
+    try:
+        return typ(input(caption))
+    except:
+		print("😠")
+        return typedTnput(typ,caption)
 def boolInput(caption):
     """
     returns either True or False depending what the user provided
     """
     while True:
         an = input(caption)
-        for i in['y', 'Y', 'yes', 'Yes', 'YES']:
-            if an == i: return True
-        for i in['n', 'N', 'no', 'No', 'NO']:
-            if an == i: return False
+        if an in ['y', 'Y', 'yes', 'Yes', 'YES']: 
+			return True
+        elif an in ['n', 'N', 'no', 'No', 'NO']: 
+			return False
+		else:
+			print("😠")
 
 def Menu(options, none):
     """
