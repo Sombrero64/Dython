@@ -55,7 +55,7 @@ def addty(var):
     num = 0.0
     for i in var: num += i
     return num
-
+'''
 def join(var):
     """
     returns a joined string of all items in {var}
@@ -63,7 +63,7 @@ def join(var):
     string = ''
     for i in var: string += str(i)
     return string
-'''
+#"".join(....)
 def subty(var):
     """
     returns the difference of all items in {var}
@@ -141,7 +141,7 @@ def genNumList(nin, nax):
     returns a list of integers from {nin} to {nax}
     """
     C, List = nin, []
-    while C > nax:
+    while C < nax:
         List.append(C)
         C += 1
     return List
@@ -277,13 +277,14 @@ def commonMultiple(num1, num2, nax):
         for t in two:
             if o == t: return o
     return None
-
+'''
 def randItem(var):
     """
     returns a random item from {var}
     """
     return var[random.randint(0, len(var) - 1)]
-
+'''
+#random.choice
 def proba(var):
     """
     returns True if a random number from 0 to {var} equals 0
@@ -295,7 +296,7 @@ def test(boolean, one, two):
     if {boolean} is True, then return {one}. {two} if false
     """
     return one if boolean else two
-
+'''
 def contains(var, item):
     """
     returns True if {var} contains an item that equals to {item}
@@ -303,7 +304,7 @@ def contains(var, item):
     for i in var:
         if i == item: return True
     return False
-'''
+#in operator
 def sort(var):
     """
     returns {var} being sorted from smallest to greatest
